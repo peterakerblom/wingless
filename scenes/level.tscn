@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=3 format=3 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
+[ext_resource type="PackedScene" uid="uid://dlll5p2egtttk" path="res://scenes/cultivation_bed.tscn" id="2_e75mp"]
 
 [node name="Level" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CultivationBed" parent="CanvasLayer" instance=ExtResource("2_e75mp")]
+position = Vector2(327, 423)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15

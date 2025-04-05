@@ -1,0 +1,5 @@
+res://scenes/level.tscn
+res://scenes/player.tscn
+res://scripts/player.gd
+res://scenes/cultivation_bed.tscn
+res://scripts/cultivation_bed.gd

@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1743764761
-icon.svg::CompressedTexture2D::6169218622742134969::1743580111::1743580129::1::::<><>::
-::res://assets/::1743580983
-::res://scenes/::1743592625
-level.tscn::PackedScene::8448371785996235265::1743581640::0::1::::<><>::uid://hiqnp35mi2a0::::res://scenes/player.tscn
-player.tscn::PackedScene::508832447187952197::1743592625::0::1::::<><>::res://scripts/player.gd
-::res://scripts/::1743581637
-player.gd::GDScript::-1::1743581637::0::1::::<>CharacterBody2D<>::
+::res://::1743855478
+icon.svg::CompressedTexture2D::6169218622742134969::1743855407::1743855479::1::::<><>::
+README.md::TextFile::-1::1743855407::0::1::::<><>::
+::res://scenes/::1743855407
+level.tscn::PackedScene::8448371785996235265::1743855407::0::1::::<><>::uid://hiqnp35mi2a0::::res://scenes/player.tscn
+player.tscn::PackedScene::508832447187952197::1743855407::0::1::::<><>::res://scripts/player.gd
+::res://scripts/::1743855407
+player.gd::GDScript::-1::1743855407::0::1::::<>CharacterBody2D<>::
