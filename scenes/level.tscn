@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsmppjbhh5vbl"]
+
+[ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
+
+[node name="Level" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.643533, 0.555452, 0.254815, 1)
+
+[node name="Player" parent="CanvasLayer" instance=ExtResource("1_mvkqu")]
+position = Vector2(283, 288)
