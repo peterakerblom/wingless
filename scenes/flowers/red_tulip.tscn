@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://be54ey8gw38t3"]
+
+[ext_resource type="Script" path="res://scripts/flower.gd" id="1_nuyfs"]
+[ext_resource type="Texture2D" uid="uid://dekmaho8qr4v4" path="res://assets/images/red_tulip.png" id="1_wf6q6"]
+[ext_resource type="Texture2D" uid="uid://bksdwoylg1hsw" path="res://assets/images/red_tulip_v1.svg" id="3_uwf7e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2u8b"]
+radius = 18.0278
+
+[node name="RedTulip" type="Area2D"]
+script = ExtResource("1_nuyfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h2u8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -4.54747e-13)
+scale = Vector2(0.194656, 0.194657)
+texture = ExtResource("1_wf6q6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -25.0
+offset_top = -28.0
+offset_right = 26.0
+offset_bottom = 22.0
+texture = ExtResource("3_uwf7e")
+expand_mode = 1

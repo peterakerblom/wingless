@@ -1,21 +1,31 @@
+#@tool
 extends Area2D
 
-@onready var color_rect: ColorRect = $ColorRect
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var rect_shape: RectangleShape2D = collision_shape.shape
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var size = rect_shape.size
-	color_rect.size = size
-	color_rect.position = -size / 2  # Centrerar rektangeln.
+func _ready():
+	update_sprite_scale()
 
-	print("ColorRect Size:", color_rect.size)
-	print("ColorRect Position:", color_rect.position)
-	print("ColorRect Color:", color_rect.color)
+#func _process(delta):
+	#if Engine.is_editor_hint():
+		#update_sprite_scale()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var size = rect_shape.size
-	color_rect.size = size
-	color_rect.position = -size / 2
+func update_sprite_scale():
+	if sprite.texture and rect_shape:
+		var target_size = rect_shape.size
+		var sprite_size = sprite.texture.get_size()
+
+		# Skala spriten så att den matchar kollisionen
+		var scale = Vector2(
+			target_size.x / sprite_size.x,
+			target_size.y / sprite_size.y
+		)
+
+		# Sätt rätt skala på spriten
+		sprite.scale = scale
+
+		# Centrera spriten genom att justera dess position
+		# Anpassa till mitten av kollisionen
+		#sprite.position = Vector2(-target_size.x / 2, -target_size.y / 2)
