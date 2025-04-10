@@ -2,3 +2,5 @@ res://scenes/level.tscn
 res://scenes/player.tscn
 res://scenes/cultivation_bed.tscn
 res://scenes/flowers/red_tulip.tscn
+res://scripts/flower.gd
+res://scripts/cultivation_bed.gd
