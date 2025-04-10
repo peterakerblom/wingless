@@ -10,10 +10,12 @@ size = Vector2(500, 100)
 script = ExtResource("1_mg0ch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(250, 50)
 shape = SubResource("RectangleShape2D_gfk8v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.15)
+position = Vector2(250.3, 50.2)
+scale = Vector2(0.433507, 0.153704)
 texture = ExtResource("2_duauy")
 
 [node name="Timer" type="Timer" parent="."]

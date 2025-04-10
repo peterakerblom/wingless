@@ -19,16 +19,16 @@ grow_vertical = 2
 color = Color(0.643533, 0.555452, 0.254815, 1)
 
 [node name="CultivationBed" parent="CanvasLayer" instance=ExtResource("2_e75mp")]
-position = Vector2(553, 182)
+position = Vector2(359, 170)
 
 [node name="CultivationBed2" parent="CanvasLayer" instance=ExtResource("2_e75mp")]
-position = Vector2(547, 341)
+position = Vector2(358, 342)
 
 [node name="CultivationBed3" parent="CanvasLayer" instance=ExtResource("2_e75mp")]
-position = Vector2(549, 502)
+position = Vector2(358, 504)
 
 [node name="RedTulip" parent="CanvasLayer" instance=ExtResource("2_m3wsh")]
-position = Vector2(378, 337)
+position = Vector2(411, 218)
 
 [node name="Player" parent="CanvasLayer" instance=ExtResource("1_mvkqu")]
 position = Vector2(334, 185)
