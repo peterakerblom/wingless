@@ -5,3 +5,5 @@ res://scenes/flowers/red_tulip.tscn
 res://scripts/cultivation_bed.gd
 res://scripts/flower.gd
 res://scenes/level.gd
+res://scenes/enemies/wasp.tscn
+res://scripts/player.gd

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=5 format=3 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_jseyj"]
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
 [ext_resource type="PackedScene" uid="uid://dlll5p2egtttk" path="res://scenes/cultivation_bed.tscn" id="2_e75mp"]
+[ext_resource type="PackedScene" uid="uid://cjf885smbyg1x" path="res://scenes/enemies/wasp.tscn" id="4_nkwwc"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jseyj")
@@ -43,3 +44,8 @@ theme_override_font_sizes/font_size = 24
 text = "Score: "
 
 [node name="Flowers" type="Node" parent="CanvasLayer"]
+
+[node name="Enemies" type="Node" parent="CanvasLayer"]
+
+[node name="Wasp" parent="CanvasLayer/Enemies" instance=ExtResource("4_nkwwc")]
+position = Vector2(622, 93)

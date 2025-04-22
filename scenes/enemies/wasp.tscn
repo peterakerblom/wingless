@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjf885smbyg1x"]
+
+[ext_resource type="Texture2D" uid="uid://17l8dhsnssoj" path="res://assets/images/wasp_v1.svg" id="1_j6mqh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4an82"]
+radius = 7.0
+height = 60.0
+
+[node name="Wasp" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4an82")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+texture = ExtResource("1_j6mqh")
+expand_mode = 1
