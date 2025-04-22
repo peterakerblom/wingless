@@ -6,8 +6,9 @@ extends Area2D
 @onready var rect_shape: RectangleShape2D = collision_shape.shape
 
 @export var flower_scene = preload("res://scenes/flowers/red_tulip.tscn")
-@export var flower_spawn_interval_min: float = 5.0
-@export var flower_spawn_interval_max: float = 10.0
+@export var flower_spawn_interval_min: float = 8.0
+@export var flower_spawn_interval_max: float = 25.0
+@export var max_flower_count: int = 15
 
 var timer : Timer
 
@@ -32,11 +33,13 @@ func update_sprite_scale():
 		# Sätt rätt skala på spriten
 		sprite.scale = scale
 
-		# Centrera spriten genom att justera dess position
-		# Anpassa till mitten av kollisionen
-		#sprite.position = Vector2(-target_size.x / 2, -target_size.y / 2)
 
 func _on_timer_timeout() -> void:
+	var flower_count = get_node("../Flowers").get_child_count()
+	if flower_count >= max_flower_count:
+		print("max_flower_count reached: " + str(flower_count))
+		return
+	
 	# Hämta Area2D's storlek (rektangelns storlek från kollisionen)
 	var area_size = rect_shape.size  # Om din Area2D är en rektangel
 	var area_position = global_position  # Om positionen är global (beroende på var area2D:n ligger)
@@ -49,8 +52,9 @@ func _on_timer_timeout() -> void:
 	
 	# Spawna scenen på den slumpmässiga positionen
 	var instance = flower_scene.instantiate()
+	instance.add_to_group("Flowers")
 	instance.position = random_position  # Sätt den slumpmässiga positionen
-	get_parent().add_child(instance)  # Lägg till den spawna scenen som ett barn till föräldern
+	get_parent().get_node("Flowers").add_child(instance)  # Lägg till den spawna scenen som ett barn till föräldern
 
 func set_random_spawn_interval():
 	var random_interval = randf_range(flower_spawn_interval_min, flower_spawn_interval_max)

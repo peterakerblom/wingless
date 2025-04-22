@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=4 format=3 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_jseyj"]
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
 [ext_resource type="PackedScene" uid="uid://dlll5p2egtttk" path="res://scenes/cultivation_bed.tscn" id="2_e75mp"]
-[ext_resource type="PackedScene" uid="uid://be54ey8gw38t3" path="res://scenes/flowers/red_tulip.tscn" id="2_m3wsh"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jseyj")
@@ -27,8 +26,20 @@ position = Vector2(358, 342)
 [node name="CultivationBed3" parent="CanvasLayer" instance=ExtResource("2_e75mp")]
 position = Vector2(358, 504)
 
-[node name="RedTulip" parent="CanvasLayer" instance=ExtResource("2_m3wsh")]
-position = Vector2(411, 218)
-
 [node name="Player" parent="CanvasLayer" instance=ExtResource("1_mvkqu")]
 position = Vector2(334, 185)
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.256169, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Score: "
+
+[node name="Flowers" type="Node" parent="CanvasLayer"]
