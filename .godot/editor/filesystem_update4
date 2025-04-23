@@ -2,8 +2,7 @@ res://scenes/level.tscn
 res://scenes/player.tscn
 res://scenes/cultivation_bed.tscn
 res://scenes/flowers/red_tulip.tscn
-res://scripts/cultivation_bed.gd
-res://scripts/flower.gd
-res://scenes/level.gd
 res://scenes/enemies/wasp.tscn
-res://scripts/player.gd
+res://scripts/wasp.gd
+res://scenes/spawn.tscn
+res://scripts/spawn.gd
