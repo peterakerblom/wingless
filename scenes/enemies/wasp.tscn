@@ -16,7 +16,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4an82")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-unique_name_in_owner = true
 offset_left = -35.0
 offset_top = -35.0
 offset_right = 35.0

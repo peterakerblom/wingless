@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=5 format=3 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_jseyj"]
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
 [ext_resource type="PackedScene" uid="uid://dlll5p2egtttk" path="res://scenes/cultivation_bed.tscn" id="2_e75mp"]
-[ext_resource type="PackedScene" uid="uid://cjf885smbyg1x" path="res://scenes/enemies/wasp.tscn" id="4_nkwwc"]
 [ext_resource type="PackedScene" uid="uid://c63jav3eq4r3y" path="res://scenes/spawn.tscn" id="5_51k3b"]
 
 [node name="Level" type="Node2D"]
@@ -48,13 +47,15 @@ text = "Score: "
 
 [node name="Enemies" type="Node" parent="CanvasLayer"]
 
-[node name="Wasp" parent="CanvasLayer/Enemies" instance=ExtResource("4_nkwwc")]
-position = Vector2(622, 93)
-
 [node name="Spawns" type="Node" parent="CanvasLayer"]
 
 [node name="SpawnLeft" parent="CanvasLayer/Spawns" instance=ExtResource("5_51k3b")]
-position = Vector2(32, 35)
+position = Vector2(12, 35)
+wasp_spawn_interval_min = 2.0
+wasp_spawn_interval_max = 5.0
 
 [node name="SpawnRight" parent="CanvasLayer/Spawns" instance=ExtResource("5_51k3b")]
-position = Vector2(1092, 42)
+position = Vector2(1110, 42)
+wasp_spawn_interval_min = 2.0
+wasp_spawn_interval_max = 5.0
+flip_texture = true

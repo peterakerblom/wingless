@@ -3,5 +3,5 @@ res://scenes/player.tscn
 res://scenes/cultivation_bed.tscn
 res://scenes/flowers/red_tulip.tscn
 res://scenes/enemies/wasp.tscn
-res://scenes/spawn.tscn
 res://scripts/spawn.gd
+res://scripts/wasp.gd

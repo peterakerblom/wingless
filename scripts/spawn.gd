@@ -1,9 +1,9 @@
 extends StaticBody2D
 
 var timer : Timer
-var node_name : String
 @export var wasp_spawn_interval_min: float = 2.0
 @export var wasp_spawn_interval_max: float = 5.0
+@export var flip_texture : bool = false
 
 @onready var wasp_scene = preload("res://scenes/enemies/wasp.tscn")
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -11,7 +11,6 @@ var node_name : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var node_name = self.name
 	timer = $Timer
 	set_random_spawn_interval()
 	timer.one_shot = false  # Så att timern fortsätter återkomma
@@ -25,6 +24,9 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var wasp = wasp_scene.instantiate()
+	if flip_texture:
+		wasp.flipped = true
+		wasp.apply_flipped()
 	var area_size = rect_shape.size
 	var area_position = global_position 
 	var random_position = Vector2(
@@ -34,10 +36,11 @@ func _on_timer_timeout() -> void:
 	wasp.position = random_position 
 	get_parent().get_parent().get_node("Enemies").add_child(wasp)
 	#add_to_group("Enemies")
-	print(node_name)
-	if node_name.contains("Right"):
-		var wasp_sprite = wasp.get_node("res://assets/images/wasp_v1.svg")
-		wasp_sprite.scale.x *= -1
+
+	#if flip_texture:
+		#wasp.flipped = true
+		#var wasp_texture = wasp.get_node("TextureRect")
+		#wasp_texture.scale.x *= -1
 	
 	pass # Replace with function body.
 
