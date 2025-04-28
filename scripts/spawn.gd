@@ -1,10 +1,19 @@
 extends StaticBody2D
 
 var timer : Timer
+var node_name : String
+@export var wasp_spawn_interval_min: float = 2.0
+@export var wasp_spawn_interval_max: float = 5.0
+
+@onready var wasp_scene = preload("res://scenes/enemies/wasp.tscn")
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var rect_shape: RectangleShape2D = collision_shape.shape
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var node_name = self.name
 	timer = $Timer
+	set_random_spawn_interval()
 	timer.one_shot = false  # Så att timern fortsätter återkomma
 	timer.start()  # Starta timern direkt
 
@@ -15,4 +24,23 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	var wasp = wasp_scene.instantiate()
+	var area_size = rect_shape.size
+	var area_position = global_position 
+	var random_position = Vector2(
+		randf_range(area_position.x, area_position.x + area_size.x),  # X position inom området
+		randf_range(area_position.y, area_position.y + area_size.y)   # Y position inom området
+	)
+	wasp.position = random_position 
+	get_parent().get_parent().get_node("Enemies").add_child(wasp)
+	#add_to_group("Enemies")
+	print(node_name)
+	if node_name.contains("Right"):
+		var wasp_sprite = wasp.get_node("res://assets/images/wasp_v1.svg")
+		wasp_sprite.scale.x *= -1
+	
 	pass # Replace with function body.
+
+func set_random_spawn_interval():
+	var random_interval = randf_range(wasp_spawn_interval_min, wasp_spawn_interval_max)
+	timer.wait_time = random_interval 
