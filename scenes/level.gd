@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 func update_score_label():
 	score_label.text = "Score: " + str(score)
+	GameManager.high_score = score
 
 func incement_score(points):
 	score += points

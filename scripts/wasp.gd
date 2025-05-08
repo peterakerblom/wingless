@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Area2D
 
 var flipped = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -20,3 +20,8 @@ func apply_flipped():
 		var txtrect = self.get_node("TextureRect")
 		txtrect.scale.x *= -1
 		direction = Vector2.LEFT
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		body.take_damage()

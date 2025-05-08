@@ -7,7 +7,7 @@
 radius = 7.0
 height = 60.0
 
-[node name="Wasp" type="CharacterBody2D"]
+[node name="Wasp" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_eoh3n")
 
@@ -22,3 +22,5 @@ offset_right = 35.0
 offset_bottom = 35.0
 texture = ExtResource("1_j6mqh")
 expand_mode = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
