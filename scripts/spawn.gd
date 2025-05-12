@@ -1,8 +1,8 @@
 extends StaticBody2D
 
 var timer : Timer
-@export var wasp_spawn_interval_min: float = 2.0
-@export var wasp_spawn_interval_max: float = 5.0
+#@export var wasp_spawn_interval_min: float = 2.0
+#@export var wasp_spawn_interval_max: float = 5.0
 @export var flip_texture : bool = false
 
 @onready var wasp_scene = preload("res://scenes/enemies/wasp.tscn")
@@ -35,15 +35,11 @@ func _on_timer_timeout() -> void:
 	)
 	wasp.position = random_position 
 	get_parent().get_parent().get_node("Enemies").add_child(wasp)
-	#add_to_group("Enemies")
 
-	#if flip_texture:
-		#wasp.flipped = true
-		#var wasp_texture = wasp.get_node("TextureRect")
-		#wasp_texture.scale.x *= -1
-	
-	pass # Replace with function body.
+	set_random_spawn_interval()
 
 func set_random_spawn_interval():
-	var random_interval = randf_range(wasp_spawn_interval_min, wasp_spawn_interval_max)
+	#var random_interval = randf_range(wasp_spawn_interval_min, wasp_spawn_interval_max)
+	var random_interval = randf_range(GameManager.min_enemy_spawn_time, GameManager.max_enemy_spawn_time)
+	print("setting new time intervall")
 	timer.wait_time = random_interval 

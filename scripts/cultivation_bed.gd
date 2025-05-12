@@ -37,7 +37,7 @@ func update_sprite_scale():
 func _on_timer_timeout() -> void:
 	var flower_count = get_node("../Flowers").get_child_count()
 	if flower_count >= max_flower_count:
-		print("max_flower_count reached: " + str(flower_count))
+		#print("max_flower_count reached: " + str(flower_count))
 		return
 	
 	# Hämta Area2D's storlek (rektangelns storlek från kollisionen)

@@ -19,3 +19,10 @@ func update_score_label():
 func incement_score(points):
 	score += points
 	update_score_label()
+
+
+func _on_timer_enemy_spawn_time_timeout() -> void:
+	GameManager.min_enemy_spawn_time = max(1, GameManager.min_enemy_spawn_time - 1)
+	GameManager.max_enemy_spawn_time = max(1, GameManager.max_enemy_spawn_time - 1)
+	print("GameManager.min_enemy_spawn_time : " + str(GameManager.min_enemy_spawn_time))
+	print("GameManager.max_enemy_spawn_time : " + str(GameManager.max_enemy_spawn_time))

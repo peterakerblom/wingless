@@ -51,11 +51,13 @@ text = "Score: "
 
 [node name="SpawnLeft" parent="CanvasLayer/Spawns" instance=ExtResource("5_51k3b")]
 position = Vector2(12, 35)
-wasp_spawn_interval_min = 2.0
-wasp_spawn_interval_max = 5.0
 
 [node name="SpawnRight" parent="CanvasLayer/Spawns" instance=ExtResource("5_51k3b")]
 position = Vector2(1110, 42)
-wasp_spawn_interval_min = 2.0
-wasp_spawn_interval_max = 5.0
 flip_texture = true
+
+[node name="TimerEnemySpawnTime" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="TimerEnemySpawnTime" to="." method="_on_timer_enemy_spawn_time_timeout"]

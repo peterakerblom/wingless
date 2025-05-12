@@ -6,3 +6,9 @@ res://scenes/enemies/wasp.tscn
 res://scenes/game_over.tscn
 res://scripts/player.gd
 res://scripts/flower.gd
+res://scripts/game_manager.gd
+res://scripts/spawn.gd
+res://scenes/level.gd
+res://scripts/cultivation_bed.gd
+res://scenes/spawn.tscn
+res://scripts/game_over.gd
