@@ -15,5 +15,6 @@ func take_damage():
 	game_over()
 
 func game_over():
+	queue_free()
 	var game_over_scene = preload("res://scenes/game_over.tscn").instantiate()
 	get_tree().current_scene.add_child(game_over_scene)

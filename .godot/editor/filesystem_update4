@@ -3,9 +3,6 @@ res://scenes/player.tscn
 res://scenes/cultivation_bed.tscn
 res://scenes/flowers/red_tulip.tscn
 res://scenes/enemies/wasp.tscn
-res://scripts/wasp.gd
-res://scripts/player.gd
 res://scenes/game_over.tscn
-res://scripts/game_over.gd
-res://scripts/game_manager.gd
-res://scenes/level.gd
+res://scripts/player.gd
+res://scripts/flower.gd
