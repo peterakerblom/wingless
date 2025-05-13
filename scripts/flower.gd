@@ -41,4 +41,7 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	print("Timern har löpt ut!")
 	level.incement_score(point_value)
+	var popup = preload("uid://mh2tdxx14rx7").instantiate() # point popup
+	get_parent().add_child(popup)
+	popup.show_popup(self.global_position)
 	queue_free()
