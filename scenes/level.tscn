@@ -43,6 +43,15 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
 text = "Score: "
 
+[node name="LevelLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 2
+offset_right = 112.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0.256169, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Level: "
+
 [node name="Flowers" type="Node" parent="CanvasLayer"]
 
 [node name="Enemies" type="Node" parent="CanvasLayer"]
@@ -57,7 +66,7 @@ position = Vector2(1110, 42)
 flip_texture = true
 
 [node name="TimerEnemySpawnTime" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 30.0
 autostart = true
 
 [connection signal="timeout" from="TimerEnemySpawnTime" to="." method="_on_timer_enemy_spawn_time_timeout"]

@@ -12,3 +12,4 @@ res://scenes/level.gd
 res://scripts/game_manager.gd
 res://scripts/wasp.gd
 res://scripts/spawn.gd
+res://scripts/game_over.gd

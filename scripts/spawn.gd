@@ -1,8 +1,6 @@
 extends StaticBody2D
 
 var timer : Timer
-#@export var wasp_spawn_interval_min: float = 2.0
-#@export var wasp_spawn_interval_max: float = 5.0
 @export var flip_texture : bool = false
 
 @onready var wasp_scene = preload("res://scenes/enemies/wasp.tscn")

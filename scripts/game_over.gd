@@ -13,4 +13,6 @@ func _ready() -> void:
 func _on_restart_pressed():
 	GameManager.reset_high_score()
 	GameManager.reset_enemy_spawner_timers()
+	GameManager.reset_wasp_speed()
+	GameManager.reset_level_number()
 	get_tree().reload_current_scene()
