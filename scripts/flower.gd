@@ -28,13 +28,11 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print(body.name + " enters area")
 		progress_bar.visible = true
 		timer.start()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print(body.name + " leaves area")
 		progress_bar.visible = false
 		timer.stop()
 

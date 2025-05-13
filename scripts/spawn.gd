@@ -39,7 +39,5 @@ func _on_timer_timeout() -> void:
 	set_random_spawn_interval()
 
 func set_random_spawn_interval():
-	#var random_interval = randf_range(wasp_spawn_interval_min, wasp_spawn_interval_max)
 	var random_interval = randf_range(GameManager.min_enemy_spawn_time, GameManager.max_enemy_spawn_time)
-	print("setting new time intervall")
 	timer.wait_time = random_interval 

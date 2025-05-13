@@ -2,7 +2,7 @@ extends Area2D
 
 var flipped = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@export var speed: float = 300.0
+@export var speed: float = GameManager.wasp_speed
 var direction: Vector2 = Vector2.RIGHT
 
 func _ready():
