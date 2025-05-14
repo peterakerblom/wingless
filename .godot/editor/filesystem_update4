@@ -1,4 +1,5 @@
 res://scenes/level.tscn
+res://scripts/flower.gd
 res://scenes/player.tscn
 res://scenes/cultivation_bed.tscn
 res://scenes/flowers/red_tulip.tscn
@@ -6,10 +7,3 @@ res://scenes/enemies/wasp.tscn
 res://scenes/game_over.tscn
 res://scenes/spawn.tscn
 res://scenes/point_popup.tscn
-res://scripts/point_popup.gd
-res://scripts/flower.gd
-res://scenes/level.gd
-res://scripts/game_manager.gd
-res://scripts/wasp.gd
-res://scripts/spawn.gd
-res://scripts/game_over.gd

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhb8ivyfwfogv" path="res://assets/images/dirt.png" id="2_duauy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfk8v"]
-size = Vector2(800, 150)
+size = Vector2(1680, 195)
 
 [node name="CultivationBed" type="Area2D"]
 script = ExtResource("1_mg0ch")
@@ -12,12 +12,12 @@ flower_spawn_interval_min = 1.0
 flower_spawn_interval_max = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(400, 75)
+position = Vector2(840, 97.5)
 shape = SubResource("RectangleShape2D_gfk8v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(400, 75)
-scale = Vector2(0.690034, 0.219314)
+position = Vector2(840.77, 98.9711)
+scale = Vector2(1.45526, 0.293299)
 texture = ExtResource("2_duauy")
 
 [node name="Timer" type="Timer" parent="."]

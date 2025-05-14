@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://hiqnp35mi2a0"]
+[gd_scene load_steps=5 format=3 uid="uid://hiqnp35mi2a0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_mh1lr"]
 [ext_resource type="Texture2D" uid="uid://bhn5ehkrmocc7" path="res://assets/images/bee_v1.svg" id="2_es1pc"]
+[ext_resource type="Texture2D" uid="uid://cf88dxl7etdia" path="res://assets/images/bee_v1.png" id="3_e0hp4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yd0yx"]
-radius = 14.1421
+radius = 28.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_mh1lr")
@@ -14,6 +15,7 @@ rotation = 1.5708
 shape = SubResource("CircleShape2D_yd0yx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 offset_left = 23.0
 offset_top = -20.0
 offset_right = 64.0
@@ -21,3 +23,9 @@ offset_bottom = 23.0
 rotation = 1.5708
 texture = ExtResource("2_es1pc")
 expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.98023e-08, 5.96046e-08)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_e0hp4")
