@@ -32,6 +32,8 @@ expand_mode = 1
 one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = 100
+z_as_relative = false
 offset_left = -40.0
 offset_top = 29.0
 offset_right = 39.0
@@ -45,6 +47,9 @@ show_percentage = false
 scale = Vector2(0.167969, 0.167969)
 texture = ExtResource("3_fxk6y")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

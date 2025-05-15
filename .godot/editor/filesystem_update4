@@ -1,9 +1,12 @@
-res://scenes/level.tscn
+res://scenes/flowers/red_tulip.tscn
 res://scripts/flower.gd
+res://scenes/level.tscn
 res://scenes/player.tscn
 res://scenes/cultivation_bed.tscn
-res://scenes/flowers/red_tulip.tscn
 res://scenes/enemies/wasp.tscn
 res://scenes/game_over.tscn
 res://scenes/spawn.tscn
 res://scenes/point_popup.tscn
+res://scenes/particles/pickup_particles.tscn
+res://scripts/pickup_particles.gd
+res://scripts/camera_2d.gd

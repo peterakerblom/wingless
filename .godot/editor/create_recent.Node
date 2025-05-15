@@ -1,6 +1,9 @@
+Camera2D
+GPUParticles2D
+AudioStreamPlayer2D
+AudioStreamPlayer
 TileMapLayer
 Sprite2D
-Camera2D
 AnimationPlayer
 Label
 Timer
@@ -9,7 +12,3 @@ TextureProgressBar
 CanvasLayer
 Control
 VBoxContainer
-Button
-ColorRect
-Area2D
-Node
