@@ -1,10 +1,11 @@
+AnimatedSprite2D
+AnimationPlayer
 Camera2D
 GPUParticles2D
 AudioStreamPlayer2D
 AudioStreamPlayer
 TileMapLayer
 Sprite2D
-AnimationPlayer
 Label
 Timer
 ProgressBar

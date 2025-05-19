@@ -68,6 +68,6 @@ rotation = 1.5708
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_gwnvv")
 autoplay = "default"
-frame_progress = 0.844724
+frame_progress = 0.285687
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

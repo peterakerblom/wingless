@@ -22,9 +22,9 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var wasp = wasp_scene.instantiate()
-	if flip_texture:
-		wasp.flipped = true
-		wasp.apply_flipped()
+	wasp.flipped = flip_texture
+	get_parent().get_parent().get_node("Enemies").add_child(wasp)
+	
 	var area_size = rect_shape.size
 	var area_position = global_position 
 	var random_position = Vector2(
@@ -32,7 +32,6 @@ func _on_timer_timeout() -> void:
 		randf_range(area_position.y, area_position.y + area_size.y)   # Y position inom området
 	)
 	wasp.position = random_position 
-	get_parent().get_parent().get_node("Enemies").add_child(wasp)
 
 	set_random_spawn_interval()
 

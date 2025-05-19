@@ -6,6 +6,8 @@ var flipped = false
 var direction: Vector2 = Vector2.RIGHT
 
 func _ready():
+	if flipped:
+		apply_flipped()
 	pass
 
 func _process(delta):
@@ -16,10 +18,9 @@ func _process(delta):
 
 
 func apply_flipped():
-	if flipped:
-		var txtrect = self.get_node("TextureRect")
-		txtrect.scale.x *= -1
-		direction = Vector2.LEFT
+	var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+	animated_sprite_2d.flip_v = true
+	direction = Vector2.LEFT
 
 
 func _on_body_entered(body: Node2D) -> void:
