@@ -5,6 +5,10 @@ extends Area2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var rect_shape: RectangleShape2D = collision_shape.shape
 
+@export var tilemap_path: NodePath = "TileMapLayer"
+@onready var tilemap: TileMap = get_node(tilemap_path)
+var spawn_positions: Array[Vector2] = []
+
 @export var flower_scene = preload("res://scenes/flowers/red_tulip.tscn")
 @export var flower_spawn_interval_min: float = 8.0
 @export var flower_spawn_interval_max: float = 25.0
@@ -18,6 +22,18 @@ func _ready():
 	set_random_spawn_interval()
 	timer.one_shot = false  # Så att timern fortsätter återkomma
 	timer.start()  # Starta timern direkt
+
+func get_spawn_positions_from_tilemap() -> Array[Vector2]:
+	var positions: Array[Vector2] = []
+	
+	for cell in tilemap.get_used_cells(0):  # Lager 0, byt om du använder annat
+		var tile_data = tilemap.get_cell_tile_data(0, cell)
+		if tile_data != null and tile_data.get_custom_data("spawn_tile"):
+			var world_pos = tilemap.map_to_local(cell)
+			positions.append(world_pos)
+	
+	return positions
+
 
 func update_sprite_scale():
 	if sprite.texture and rect_shape:

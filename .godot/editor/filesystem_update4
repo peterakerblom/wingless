@@ -8,5 +8,4 @@ res://scenes/game_over.tscn
 res://scenes/spawn.tscn
 res://scenes/point_popup.tscn
 res://scenes/particles/pickup_particles.tscn
-res://scripts/wasp.gd
-res://scripts/spawn.gd
+res://scripts/cultivation_bed.gd
