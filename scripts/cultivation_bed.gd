@@ -17,7 +17,11 @@ var spawn_positions: Array[Vector2] = []
 var timer : Timer
 
 func _ready():
-	update_sprite_scale()
+	tilemap = get_node(tilemap_path)
+	spawn_positions = get_spawn_positions_from_tilemap()
+	
+	
+	#update_sprite_scale()
 	timer = $Timer
 	set_random_spawn_interval()
 	timer.one_shot = false  # Så att timern fortsätter återkomma
@@ -28,7 +32,7 @@ func get_spawn_positions_from_tilemap() -> Array[Vector2]:
 	
 	for cell in tilemap.get_used_cells(0):  # Lager 0, byt om du använder annat
 		var tile_data = tilemap.get_cell_tile_data(0, cell)
-		if tile_data != null and tile_data.get_custom_data("spawn_tile"):
+		if tile_data != null and tile_data.get_custom_data("plant_spawn_tile"):
 			var world_pos = tilemap.map_to_local(cell)
 			positions.append(world_pos)
 	
