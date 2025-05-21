@@ -34,6 +34,7 @@ value = 75.0
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_eul3v")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]

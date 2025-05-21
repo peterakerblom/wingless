@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=12 format=4 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_jseyj"]
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c63jav3eq4r3y" path="res://scenes/spawn.tscn" id="5_51k3b"]
 [ext_resource type="Texture2D" uid="uid://dqbeaaj4x2tbo" path="res://assets/images/wingless_tileset_v2.png" id="6_cpfut"]
 [ext_resource type="Script" path="res://scripts/tile_map_layer.gd" id="6_uhpe5"]
+[ext_resource type="FontFile" uid="uid://bty0t72olslwg" path="res://assets/fonts/PixelOperator/PixelOperator.ttf" id="8_aconb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t73m2"]
 texture = ExtResource("2_r65vv")
@@ -83,18 +84,18 @@ anchor_right = 1.0
 offset_left = -112.0
 offset_bottom = 23.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0, 0.256169, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_aconb")
+theme_override_font_sizes/font_size = 32
 text = "Score: "
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer"]
 texture_filter = 1
 offset_right = 112.0
 offset_bottom = 34.0
-theme_override_colors/font_color = Color(0, 0.256169, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_aconb")
+theme_override_font_sizes/font_size = 32
 text = "Level: "
 
 [node name="TimerEnemySpawnTime" type="Timer" parent="."]
