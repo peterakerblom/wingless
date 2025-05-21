@@ -1,17 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://be54ey8gw38t3"]
+[gd_scene load_steps=6 format=3 uid="uid://be54ey8gw38t3"]
 
 [ext_resource type="Script" path="res://scripts/flower.gd" id="1_nuyfs"]
-[ext_resource type="Texture2D" uid="uid://y48buakiks5g" path="res://assets/images/tulip_v1.png" id="3_fxk6y"]
-[ext_resource type="Texture2D" uid="uid://bksdwoylg1hsw" path="res://assets/images/red_tulip_v1.svg" id="3_uwf7e"]
+[ext_resource type="Texture2D" uid="uid://cis7wt81src65" path="res://assets/images/tulip_v2.png" id="2_eul3v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2u8b"]
-radius = 20.0
+radius = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg8f8"]
-bg_color = Color(0.79392, 0.540402, 0.200913, 1)
+bg_color = Color(0.415686, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc7ae"]
-bg_color = Color(0.410627, 0.674852, 0.420066, 1)
+bg_color = Color(0.286275, 0.737255, 0.294118, 1)
 
 [node name="RedTulip" type="Area2D"]
 script = ExtResource("1_nuyfs")
@@ -19,33 +18,23 @@ script = ExtResource("1_nuyfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h2u8b")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-offset_left = -25.0
-offset_top = -28.0
-offset_right = 26.0
-offset_bottom = 22.0
-texture = ExtResource("3_uwf7e")
-expand_mode = 1
-
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 z_index = 100
 z_as_relative = false
-offset_left = -40.0
-offset_top = 29.0
-offset_right = 39.0
-offset_bottom = 40.0
+offset_left = -15.0
+offset_top = 9.0
+offset_right = 14.0
+offset_bottom = 11.0
 theme_override_styles/background = SubResource("StyleBoxFlat_tg8f8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nc7ae")
 value = 75.0
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.167969, 0.167969)
-texture = ExtResource("3_fxk6y")
+texture = ExtResource("2_eul3v")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 

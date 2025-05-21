@@ -1,11 +1,60 @@
-[gd_scene load_steps=5 format=3 uid="uid://hiqnp35mi2a0"]
+[gd_scene load_steps=12 format=3 uid="uid://hiqnp35mi2a0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_mh1lr"]
 [ext_resource type="Texture2D" uid="uid://bhn5ehkrmocc7" path="res://assets/images/bee_v1.svg" id="2_es1pc"]
 [ext_resource type="Texture2D" uid="uid://cf88dxl7etdia" path="res://assets/images/bee_v1.png" id="3_e0hp4"]
+[ext_resource type="Texture2D" uid="uid://da0u2k0ti222" path="res://assets/images/bee_v2.png" id="4_ejb5y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yd0yx"]
-radius = 28.0
+radius = 7.07107
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s62jj"]
+atlas = ExtResource("4_ejb5y")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qng0"]
+atlas = ExtResource("4_ejb5y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4e2d"]
+atlas = ExtResource("4_ejb5y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv5ji"]
+atlas = ExtResource("4_ejb5y")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73sdk"]
+atlas = ExtResource("4_ejb5y")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnjbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s62jj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qng0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4e2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv5ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73sdk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 20.0
+}]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_mh1lr")
@@ -25,7 +74,15 @@ texture = ExtResource("2_es1pc")
 expand_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(2.98023e-08, 5.96046e-08)
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_e0hp4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_nnjbq")
+animation = &"walk"
+frame_progress = 0.203659

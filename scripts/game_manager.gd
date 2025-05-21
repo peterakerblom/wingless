@@ -9,8 +9,8 @@ var min_enemy_spawn_time_default : int = 5
 var max_enemy_spawn_time : int = 10
 var max_enemy_spawn_time_default : int = 10
 
-var wasp_speed = 200
-var wasp_speed_default = 200
+var wasp_speed = 100
+var wasp_speed_default = 100
 
 var current_level_number = 1
 var current_level_number_default = 1

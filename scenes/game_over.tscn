@@ -31,15 +31,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LabelGameOver" type="Label" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 text = "Game Over"
 horizontal_alignment = 1
 
 [node name="LabelHighScore" type="Label" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 text = "High Score: NA"
 horizontal_alignment = 1
 
 [node name="ButtonRestart" type="Button" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 text = "Restart"

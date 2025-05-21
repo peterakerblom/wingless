@@ -31,7 +31,6 @@ func get_spawn_positions_from_tilemap() -> Array[Vector2]:
 	return positions
 
 func _on_timer_timeout() -> void:
-	print("Spawning time!")
 	if spawn_positions.is_empty():
 		return
 

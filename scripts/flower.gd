@@ -74,7 +74,6 @@ func _play_pop_sound():
 	player.autoplay = false
 	get_tree().root.add_child(player)
 	player.play()
-	print("playing")
 	player.connect("finished", Callable(player, "queue_free"))
 
 func play_pop_animation():
@@ -96,8 +95,7 @@ func _spawn_particles():
 	#particles.global_position = Vector2(300, 300)
 	particles.z_index = 999
 	get_tree().current_scene.add_child(particles)
-	print(get_tree().current_scene)
-	print("spawning particles")
+
 
 func _on_pickup():
 	var camera = get_tree().current_scene.get_node("Camera2D")
