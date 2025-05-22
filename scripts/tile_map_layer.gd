@@ -1,6 +1,8 @@
 extends TileMapLayer
 
-@export var flower_scene = preload("res://scenes/flowers/red_tulip.tscn")
+#@export var tulip_red_v1 = preload("uid://be54ey8gw38t3")
+@export var tulip_red = preload("uid://br0n6edb2wsce")
+@export var tulip_yellow = preload("uid://d0tpgsdj10gpn")
 @export var flower_spawn_interval_min: float = 0.1
 @export var flower_spawn_interval_max: float = 0.2
 @export var max_flower_count: int = 15
@@ -40,8 +42,14 @@ func _on_timer_timeout() -> void:
 
 	var random_index = randi() % spawn_positions.size()
 	var spawn_position = spawn_positions[random_index]
-
-	var instance = flower_scene.instantiate()
+	
+	var flower_type = randi_range(1, 10)
+	var instance
+	if flower_type < 8:
+		instance = tulip_red.instantiate()
+	else:
+		instance = tulip_yellow.instantiate()
+		
 	instance.add_to_group("Flowers")
 	instance.position = spawn_position
 	get_node("../Flowers").add_child(instance)

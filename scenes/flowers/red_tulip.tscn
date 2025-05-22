@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://be54ey8gw38t3"]
+[gd_scene load_steps=5 format=3 uid="uid://bqpw2ogmg8gqm"]
 
 [ext_resource type="Script" path="res://scripts/flower.gd" id="1_nuyfs"]
 [ext_resource type="Texture2D" uid="uid://cis7wt81src65" path="res://assets/images/tulip_v2.png" id="2_eul3v"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_h2u8b"]
-radius = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg8f8"]
 bg_color = Color(0.415686, 0, 0, 1)
@@ -14,9 +11,6 @@ bg_color = Color(0.286275, 0.737255, 0.294118, 1)
 
 [node name="RedTulip" type="Area2D"]
 script = ExtResource("1_nuyfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_h2u8b")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

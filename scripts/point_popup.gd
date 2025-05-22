@@ -12,6 +12,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func set_popup_text(text):
+	label.text = text
+
 func show_popup(pos: Vector2, text: String = "+1"):
 	tween = get_tree().create_tween()
 	label.text = text
