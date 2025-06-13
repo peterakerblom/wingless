@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1htwuc48ian7"]
+
+[ext_resource type="PackedScene" uid="uid://ccoe0acmb0lwg" path="res://scenes/flowers/plant.tscn" id="1_8smuc"]
+[ext_resource type="Texture2D" uid="uid://ciswi505o8qv3" path="res://assets/images/tulip_black_v2.png" id="2_r5d62"]
+
+[node name="Plant" instance=ExtResource("1_8smuc")]
+point_value = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+texture_filter = 1
+texture = ExtResource("2_r5d62")

@@ -5,60 +5,32 @@ var score : int = 0
 @onready var level_label = $CanvasLayer/LevelLabel
 
 @onready var levels = {
-	"1": {
-		"min": 9,
-		"max": 10,
-		"speed": 100
-	},
-	"2": {
-		"min": 8,
-		"max": 9,
-		"speed": 120
-	},
-	"3": {
-		"min": 7,
-		"max": 8,
-		"speed": 140
-	},
-	"4": {
-		"min": 6,
-		"max": 7,
-		"speed": 160
-	},
-	"5": {
-		"min": 5,
-		"max": 6,
-		"speed": 180
-	},
-	"6": {
-		"min": 4,
-		"max": 5,
-		"speed": 200
-	},
-	"7": {
-		"min": 3,
-		"max": 4,
-		"speed": 220
-	},
-	"8": {
-		"min": 2,
-		"max": 3,
-		"speed": 240
-	},
-	"9": {
-		"min": 1,
-		"max": 2,
-		"speed": 260
-	},
-	"10": {
-		"min": 0,
-		"max": 1,
-		"speed": 280
-	}
+	"1":  {"min": 5.0,    "max": 10.0,  "speed": 100},
+	"2":  {"min": 4.555,  "max": 9.0,   "speed": 110},
+	"3":  {"min": 4.111,  "max": 8.0,   "speed": 120},
+	"4":  {"min": 3.666,  "max": 7.0,   "speed": 130},
+	"5":  {"min": 3.222,  "max": 6.0,   "speed": 140},
+	"6":  {"min": 2.777,  "max": 5.0,   "speed": 150},
+	"7":  {"min": 2.333,  "max": 4.0,   "speed": 160},
+	"8":  {"min": 1.888,  "max": 3.0,   "speed": 170},
+	"9":  {"min": 1.444,  "max": 2.0,   "speed": 180},
+	"10": {"min": 1.0,    "max": 1.0,   "speed": 190},
+	"11": {"min": 1.0,    "max": 0.99,  "speed": 200},
+	"12": {"min": 0.89,   "max": 0.88,  "speed": 210},
+	"13": {"min": 0.78,   "max": 0.77,  "speed": 220},
+	"14": {"min": 0.67,   "max": 0.66,  "speed": 230},
+	"15": {"min": 0.56,   "max": 0.55,  "speed": 240},
+	"16": {"min": 0.45,   "max": 0.44,  "speed": 250},
+	"17": {"min": 0.34,   "max": 0.33,  "speed": 260},
+	"18": {"min": 0.23,   "max": 0.22,  "speed": 270},
+	"19": {"min": 0.12,   "max": 0.11,  "speed": 280},
+	"20": {"min": 0.01,   "max": 0.1,   "speed": 290}
 }
+
 
 @onready var current_level_key = "1"
 var current_level
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -71,6 +43,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
 
 func increase_level():
 	var next_level_key = str(int(current_level_key) + 1)

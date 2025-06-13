@@ -46,7 +46,6 @@ animations = [{
 [node name="Wasp" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_eoh3n")
-speed = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 2

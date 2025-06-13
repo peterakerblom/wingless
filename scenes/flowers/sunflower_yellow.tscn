@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://oflg1kh26y6k"]
+
+[ext_resource type="PackedScene" uid="uid://ccoe0acmb0lwg" path="res://scenes/flowers/plant.tscn" id="1_vdchv"]
+[ext_resource type="Texture2D" uid="uid://3ubmnvphul7v" path="res://assets/images/sunflower_yellow_v2.png" id="2_mf0t6"]
+
+[node name="Plant" instance=ExtResource("1_vdchv")]
+timer_duration = 10.0
+point_value = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+texture_filter = 1
+texture = ExtResource("2_mf0t6")

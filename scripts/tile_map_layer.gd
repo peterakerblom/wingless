@@ -3,6 +3,11 @@ extends TileMapLayer
 #@export var tulip_red_v1 = preload("uid://be54ey8gw38t3")
 @export var tulip_red = preload("uid://br0n6edb2wsce")
 @export var tulip_yellow = preload("uid://d0tpgsdj10gpn")
+@export var tulip_pink = preload("uid://ynetij171pjh")
+@export var tulip_black = preload("uid://1htwuc48ian7")
+@export var snowdrop = preload("uid://cy2ynsb0uc8tm")
+@export var sunflower_yellow = preload("uid://oflg1kh26y6k")
+
 @export var flower_spawn_interval_min: float = 0.1
 @export var flower_spawn_interval_max: float = 0.2
 @export var max_flower_count: int = 15
@@ -43,12 +48,20 @@ func _on_timer_timeout() -> void:
 	var random_index = randi() % spawn_positions.size()
 	var spawn_position = spawn_positions[random_index]
 	
-	var flower_type = randi_range(1, 10)
+	var flower_type = randi_range(1, 20)
 	var instance
-	if flower_type < 8:
+	if flower_type <= 8:
 		instance = tulip_red.instantiate()
-	else:
+	elif flower_type <= 12:
 		instance = tulip_yellow.instantiate()
+	elif flower_type <= 15:
+		instance = tulip_pink.instantiate()
+	elif flower_type <= 17:
+		instance = tulip_black.instantiate()
+	elif flower_type <= 19:
+		instance = snowdrop.instantiate()
+	else:
+		instance = sunflower_yellow.instantiate()
 		
 	instance.add_to_group("Flowers")
 	instance.position = spawn_position
