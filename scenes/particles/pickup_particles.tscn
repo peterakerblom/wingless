@@ -14,7 +14,11 @@ gravity = Vector3(0, 0, 0)
 script = ExtResource("1_7q2f1")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0, 0.784314)
 emitting = false
-amount = 20
+amount = 50
 process_material = SubResource("ParticleProcessMaterial_oh0nt")
+lifetime = 0.3
 one_shot = true
+speed_scale = 0.6
+explosiveness = 0.8
