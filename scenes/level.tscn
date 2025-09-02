@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=13 format=4 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_jseyj"]
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dqbeaaj4x2tbo" path="res://assets/images/wingless_tileset_v2.png" id="6_cpfut"]
 [ext_resource type="Script" path="res://scripts/tile_map_layer.gd" id="6_uhpe5"]
 [ext_resource type="FontFile" uid="uid://bty0t72olslwg" path="res://assets/fonts/PixelOperator/PixelOperator.ttf" id="8_aconb"]
+[ext_resource type="PackedScene" uid="uid://c2f2mh2vhsbme" path="res://scenes/enemies/apple.tscn" id="9_iaj1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t73m2"]
 texture = ExtResource("2_r65vv")
@@ -62,6 +63,8 @@ tile_set = SubResource("TileSet_c52dv")
 script = ExtResource("6_uhpe5")
 flower_spawn_interval_min = 2.0
 flower_spawn_interval_max = 6.0
+apple_spawn_interval_min = 8.0
+apple_spawn_interval_max = 10.0
 
 [node name="Flowers" type="Node" parent="."]
 
@@ -102,5 +105,8 @@ text = "Level: "
 [node name="TimerEnemySpawnTime" type="Timer" parent="."]
 wait_time = 15.0
 autostart = true
+
+[node name="Apple" parent="." instance=ExtResource("9_iaj1h")]
+position = Vector2(256, 135)
 
 [connection signal="timeout" from="TimerEnemySpawnTime" to="." method="_on_timer_enemy_spawn_time_timeout"]

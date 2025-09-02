@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlwilj6jimowm"]
+
+[ext_resource type="Texture2D" uid="uid://d2lpcd7mdjwly" path="res://assets/images/apple_shdow64.png" id="1_ufjba"]
+
+[node name="AppleShadow" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ufjba")

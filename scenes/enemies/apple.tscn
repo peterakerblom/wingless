@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2f2mh2vhsbme"]
+
+[ext_resource type="Script" path="res://scripts/apple.gd" id="1_jvudc"]
+[ext_resource type="Texture2D" uid="uid://88bneaw7pums" path="res://assets/images/apple64.png" id="1_np5qk"]
+[ext_resource type="PackedScene" uid="uid://dlwilj6jimowm" path="res://scenes/enemies/apple_shadow.tscn" id="3_e8m65"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thd7c"]
+radius = 16.0
+height = 38.0
+
+[node name="Apple" type="Area2D"]
+script = ExtResource("1_jvudc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+texture = ExtResource("1_np5qk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_thd7c")
+disabled = true
+
+[node name="AppleShadow" parent="." instance=ExtResource("3_e8m65")]
+position = Vector2(0, 3)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -8,12 +8,19 @@ extends TileMapLayer
 @export var snowdrop = preload("uid://cy2ynsb0uc8tm")
 @export var sunflower_yellow = preload("uid://oflg1kh26y6k")
 
+@export var apple_scene = preload("uid://c2f2mh2vhsbme")
+
 @export var flower_spawn_interval_min: float = 0.1
 @export var flower_spawn_interval_max: float = 0.2
 @export var max_flower_count: int = 15
 
+@export var apple_spawn_interval_min: float = 1
+@export var apple_spawn_interval_max: float = 2
+
 var timer: Timer
 var spawn_positions: Array[Vector2] = []
+
+var apple_timer: Timer
 
 func _ready():
 	spawn_positions = get_spawn_positions_from_tilemap()
@@ -25,7 +32,16 @@ func _ready():
 	timer.timeout.connect(_on_timer_timeout)
 	add_child(timer)
 	timer.start()
-
+	
+	# Create apple timer
+	apple_timer = Timer.new()
+	apple_timer.one_shot = false
+	apple_timer.wait_time = randf_range(apple_spawn_interval_min, apple_spawn_interval_max)
+	apple_timer.timeout.connect(_on_apple_timer_timeout)
+	add_child(apple_timer)
+	apple_timer.start()
+	
+	
 func get_spawn_positions_from_tilemap() -> Array[Vector2]:
 	var positions: Array[Vector2] = []
 
@@ -36,6 +52,16 @@ func get_spawn_positions_from_tilemap() -> Array[Vector2]:
 			positions.append(world_pos)
 
 	return positions
+
+func _on_apple_timer_timeout() -> void:
+	if spawn_positions.is_empty():
+		return
+	var random_index = randi() % spawn_positions.size()
+	var spawn_position = spawn_positions[random_index]
+	var instance = apple_scene.instantiate()
+	instance.position = spawn_position
+	get_node("../Enemies").add_child(instance)
+	set_random_apple_spawn_interval()
 
 func _on_timer_timeout() -> void:
 	if spawn_positions.is_empty():
@@ -72,3 +98,6 @@ func _on_timer_timeout() -> void:
 
 func set_random_spawn_interval():
 	timer.wait_time = randf_range(flower_spawn_interval_min, flower_spawn_interval_max)
+
+func set_random_apple_spawn_interval():
+	apple_timer.wait_time = randf_range(apple_spawn_interval_min, apple_spawn_interval_max)
