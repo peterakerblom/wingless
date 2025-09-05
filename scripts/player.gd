@@ -3,7 +3,11 @@ extends CharacterBody2D
 
 @export var speed = 100.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var splat_amin: AnimatedSprite2D = $AnimatedSprite2DSplat
 
+func _ready() -> void:
+	animated_sprite_2d.visible = true
+	splat_amin.visible = false
 
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -16,6 +20,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
+	animated_sprite_2d.visible = false
+	splat_amin.visible = true
+	splat_amin.play("splat")
+	await splat_amin.animation_finished
 	game_over()
 
 func game_over():

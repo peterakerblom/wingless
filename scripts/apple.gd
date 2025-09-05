@@ -1,10 +1,27 @@
 extends Area2D
 
+@onready var apple_sprite: Sprite2D = $Sprite2D
+@onready var apple_collisionshape: CollisionShape2D = $CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	apple_sprite.position.y = -1000
+	var fall_tween = get_tree().create_tween()
+	fall_tween.tween_property(apple_sprite, "position", Vector2(0.0, 0.0), 3.0)
+	fall_tween.finished.connect(_on_tween_finished)
+	
+func _on_tween_finished():
+	var roll_distance = 700.0
+	var rotate_value = 30.0
+	var roll_right = randf() < 0.5
+	if not roll_right:
+		roll_distance = position.x + (roll_distance * -1)
+		rotate_value = rotate_value * -1
+	apple_collisionshape.disabled = false
+	var roll_tween = get_tree().create_tween()
+	var move_tween = get_tree().create_tween()
+	roll_tween.tween_property(apple_sprite, "rotation", rotate_value, 30.0)
+	move_tween.tween_property(self, "position", Vector2(roll_distance, position.y), 30.0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

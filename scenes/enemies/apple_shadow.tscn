@@ -5,5 +5,6 @@
 [node name="AppleShadow" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
 texture_filter = 1
 texture = ExtResource("1_ufjba")
