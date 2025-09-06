@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+ClickSound="*res://scripts/click_sound.gd"
 GameManager="*res://scripts/game_manager.gd"
 
 [display]

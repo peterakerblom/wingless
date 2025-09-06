@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6j2v7eahx3r4"]
+
+[ext_resource type="Script" path="res://scripts/click_sound.gd" id="1_00pas"]
+
+[node name="ClickSound" type="Node"]
+script = ExtResource("1_00pas")

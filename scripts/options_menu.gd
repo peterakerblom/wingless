@@ -24,9 +24,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_back_pressed() -> void:
+	ClickSound.play_click()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_volume_changed(value: float) -> void:
+	ClickSound.play_click()
 	var idx = AudioServer.get_bus_index("Master")
 	var linear = value / 100.0
 	var db = linear_to_db(linear)
@@ -39,6 +41,7 @@ func _on_volume_changed(value: float) -> void:
 	cfg.save("user://settings.cfg")
 
 func _on_fullscreen_toggled(button_pressed: bool) -> void:
+	ClickSound.play_click()
 	if button_pressed:
 		print("pressed")
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
