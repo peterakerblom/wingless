@@ -66,4 +66,5 @@ layout_mode = 2
 
 [node name="ButtonBack" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wg4nj")
 text = "Main Menu"
