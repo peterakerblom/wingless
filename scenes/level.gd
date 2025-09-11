@@ -3,6 +3,7 @@ extends Node2D
 var score : int = 0
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var level_label = $CanvasLayer/LevelLabel
+@onready var speed_label: Label = $CanvasLayer/SpeedLabel
 
 @onready var levels = {
 	"1":  {"min": 5.0,    "max": 10.0,  "speed": 100},
@@ -42,7 +43,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	_update_player_stats_label()
 
 
 func increase_level():
@@ -54,6 +55,8 @@ func increase_level():
 	current_level = levels[next_level_key]
 	GameManager.current_level_number = int(current_level_key)
 
+func _update_player_stats_label() -> void:
+	speed_label.text = "Speed: " + str(PlayerStats.player_speed)
 
 func update_score_label():
 	score_label.text = "Score: " + str(score)

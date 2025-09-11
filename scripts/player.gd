@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed = 100.0
+@export var speed = PlayerStats.player_speed
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var splat_amin: AnimatedSprite2D = $AnimatedSprite2DSplat
 @onready var splat_sound = preload("uid://d36qvsux0m8q")
@@ -26,6 +26,8 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("idle")
 	velocity = transform.x * move_input * speed
 	move_and_slide()
+	if speed != PlayerStats.player_speed:
+		speed = PlayerStats.player_speed
 
 func take_damage():
 	can_move = false

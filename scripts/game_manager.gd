@@ -9,6 +9,12 @@ const min_enemy_spawn_time_default : float = 5.0
 var max_enemy_spawn_time : float = 10.0
 const max_enemy_spawn_time_default : float = 10.0
 
+var min_apple_spawn_time : float = 4.0
+const min_apple_spawn_time_default : float = 4.0
+
+var max_apple_spawn_time : float = 8.0
+const max_apple_spawn_time_default : float = 8.0
+
 var wasp_speed = 100
 const wasp_speed_default = 100
 
@@ -18,6 +24,8 @@ const current_level_number_default = 1
 func reset_enemy_spawner_timers():
 	min_enemy_spawn_time = min_enemy_spawn_time_default
 	max_enemy_spawn_time = max_enemy_spawn_time_default
+	min_apple_spawn_time = min_apple_spawn_time_default
+	max_apple_spawn_time = max_apple_spawn_time_default
 
 func reset_high_score():
 	score = 0

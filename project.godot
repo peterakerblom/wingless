@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ClickSound="*res://scripts/click_sound.gd"
 GameManager="*res://scripts/game_manager.gd"
+PlayerStats="*res://scripts/player_stats.gd"
 
 [display]
 

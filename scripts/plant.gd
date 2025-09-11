@@ -43,6 +43,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	level.incement_score(point_value)
+	_powerup_increase_player_speed(10.0)
 	var popup = preload("uid://mh2tdxx14rx7").instantiate() # point popup
 	get_parent().add_child(popup)
 	var string_point_value = "+" + str(point_value)
@@ -85,3 +86,7 @@ func _on_pickup():
 	var camera = get_tree().current_scene.get_node("Camera2D")
 	if camera:
 		camera.start_shake(0.5)  # Startar skakning med intensitet 10
+
+
+func _powerup_increase_player_speed(value: float):
+	PlayerStats.player_speed += value

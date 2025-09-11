@@ -36,7 +36,7 @@ func _ready():
 	# Create apple timer
 	apple_timer = Timer.new()
 	apple_timer.one_shot = false
-	apple_timer.wait_time = randf_range(apple_spawn_interval_min, apple_spawn_interval_max)
+	apple_timer.wait_time = randf_range(GameManager.min_apple_spawn_time, GameManager.max_apple_spawn_time)
 	apple_timer.timeout.connect(_on_apple_timer_timeout)
 	add_child(apple_timer)
 	apple_timer.start()
@@ -100,4 +100,4 @@ func set_random_spawn_interval():
 	timer.wait_time = randf_range(flower_spawn_interval_min, flower_spawn_interval_max)
 
 func set_random_apple_spawn_interval():
-	apple_timer.wait_time = randf_range(apple_spawn_interval_min, apple_spawn_interval_max)
+	apple_timer.wait_time = randf_range(GameManager.min_apple_spawn_time, GameManager.max_apple_spawn_time)

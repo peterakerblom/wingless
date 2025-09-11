@@ -17,6 +17,7 @@ func _on_restart_pressed():
 	GameManager.reset_enemy_spawner_timers()
 	GameManager.reset_wasp_speed()
 	GameManager.reset_level_number()
+	PlayerStats.reset_player_stats()
 	get_tree().reload_current_scene()
 
 func _on_main_menu_pressed():
