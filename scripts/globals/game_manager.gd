@@ -21,6 +21,21 @@ const wasp_speed_default = 100
 var current_level_number = 1
 const current_level_number_default = 1
 
+var is_player_alive: bool = true
+var player: CharacterBody2D
+
+func _ready():
+
+	pass
+
+func register_player(p):
+	player = p
+	player.player_died.connect(_on_player_died)
+
+func _on_player_died():
+	is_player_alive = false
+	print("is_player_alive = false")
+
 func reset_enemy_spawner_timers():
 	min_enemy_spawn_time = min_enemy_spawn_time_default
 	max_enemy_spawn_time = max_enemy_spawn_time_default

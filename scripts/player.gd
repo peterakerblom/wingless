@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var splat_sound = preload("uid://d36qvsux0m8q")
 var can_move: bool = true
 
+signal player_died
 
 func _ready() -> void:
 	can_move = true
@@ -39,6 +40,7 @@ func take_damage():
 	game_over()
 
 func game_over():
+	emit_signal("player_died")
 	queue_free()
 	var game_over_scene = preload("res://scenes/game_over.tscn").instantiate()
 	get_tree().current_scene.add_child(game_over_scene)

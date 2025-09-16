@@ -36,5 +36,7 @@ func _on_timer_timeout() -> void:
 	set_random_spawn_interval()
 
 func set_random_spawn_interval():
-	var random_interval = randf_range(GameManager.min_enemy_spawn_time, GameManager.max_enemy_spawn_time)
-	timer.wait_time = random_interval 
+	if GameManager.is_player_alive:
+		timer.wait_time = randf_range(GameManager.min_enemy_spawn_time, GameManager.max_enemy_spawn_time)
+	else:
+		timer.stop()

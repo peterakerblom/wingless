@@ -1,6 +1,5 @@
 extends TileMapLayer
 
-#@export var tulip_red_v1 = preload("uid://be54ey8gw38t3")
 @export var tulip_red = preload("uid://br0n6edb2wsce")
 @export var tulip_yellow = preload("uid://d0tpgsdj10gpn")
 @export var tulip_pink = preload("uid://ynetij171pjh")
@@ -97,7 +96,13 @@ func _on_timer_timeout() -> void:
 
 
 func set_random_spawn_interval():
-	timer.wait_time = randf_range(flower_spawn_interval_min, flower_spawn_interval_max)
+	if GameManager.is_player_alive:
+		timer.wait_time = randf_range(flower_spawn_interval_min, flower_spawn_interval_max)
+	else:
+		timer.stop()
 
 func set_random_apple_spawn_interval():
-	apple_timer.wait_time = randf_range(GameManager.min_apple_spawn_time, GameManager.max_apple_spawn_time)
+	if GameManager.is_player_alive:
+		apple_timer.wait_time = randf_range(GameManager.min_apple_spawn_time, GameManager.max_apple_spawn_time)
+	else:
+		apple_timer.stop()

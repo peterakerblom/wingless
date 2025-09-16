@@ -35,6 +35,8 @@ var current_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var player = $Player
+	GameManager.register_player(player)
 	GameManager.current_level_number = int(current_level_key)
 	current_level = levels[current_level_key]
 	update_score_label()
@@ -71,8 +73,10 @@ func incement_score(points):
 
 
 func _on_timer_enemy_spawn_time_timeout() -> void:
-	increase_level()
-	GameManager.min_enemy_spawn_time = max(1, current_level["min"])
-	GameManager.max_enemy_spawn_time = max(1, current_level["max"])
-	GameManager.wasp_speed = current_level["speed"]
-	update_level_label()
+	if GameManager.is_player_alive:
+		print(GameManager.is_player_alive)
+		increase_level()
+		GameManager.min_enemy_spawn_time = max(1, current_level["min"])
+		GameManager.max_enemy_spawn_time = max(1, current_level["max"])
+		GameManager.wasp_speed = current_level["speed"]
+		update_level_label()
