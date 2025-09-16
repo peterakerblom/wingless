@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2f2mh2vhsbme"]
 
-[ext_resource type="Script" path="res://scripts/apple.gd" id="1_jvudc"]
+[ext_resource type="Script" path="res://scripts/enemies/apple.gd" id="1_jvudc"]
 [ext_resource type="Texture2D" uid="uid://88bneaw7pums" path="res://assets/images/apple64.png" id="1_np5qk"]
 [ext_resource type="PackedScene" uid="uid://dlwilj6jimowm" path="res://scenes/enemies/apple_shadow.tscn" id="3_e8m65"]
 

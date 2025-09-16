@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ClickSound="*res://scripts/click_sound.gd"
-GameManager="*res://scripts/game_manager.gd"
-PlayerStats="*res://scripts/player_stats.gd"
+ClickSound="*res://scripts/globals/click_sound.gd"
+GameManager="*res://scripts/globals/game_manager.gd"
+PlayerStats="*res://scripts/globals/player_stats.gd"
 
 [display]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjf885smbyg1x"]
 
-[ext_resource type="Script" path="res://scripts/wasp.gd" id="1_eoh3n"]
+[ext_resource type="Script" path="res://scripts/enemies/wasp.gd" id="1_eoh3n"]
 [ext_resource type="Texture2D" uid="uid://17l8dhsnssoj" path="res://assets/images/wasp_v1.svg" id="1_j6mqh"]
 [ext_resource type="Texture2D" uid="uid://ncwlua3gdyls" path="res://assets/images/wasp_v1.png" id="3_2ea1p"]
 
