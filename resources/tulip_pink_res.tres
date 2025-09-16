@@ -7,4 +7,3 @@ script = ExtResource("1_cqids")
 plant_name = "Pink Tulip"
 points = 3
 pickup_time = 3.0
-powerup = 0

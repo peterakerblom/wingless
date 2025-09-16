@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ExtraPoints" load_steps=2 format=3 uid="uid://bw4tvrtpt0ec3"]
+
+[ext_resource type="Script" path="res://scripts/powerups/extra_points.gd" id="1_j0x53"]
+
+[resource]
+script = ExtResource("1_j0x53")
+bonus_points = 2
+points_multiplier = 2

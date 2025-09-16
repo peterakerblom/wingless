@@ -44,6 +44,8 @@ func _on_body_exited(body: Node2D) -> void:
 		timer.stop()
 
 func _on_timer_timeout() -> void:
+	print("Powerup Active!")
+	_activate_powerup()
 	level.incement_score(data.points)
 	var popup = preload("uid://mh2tdxx14rx7").instantiate() # point popup
 	get_parent().add_child(popup)
@@ -53,8 +55,7 @@ func _on_timer_timeout() -> void:
 	progress_bar.queue_free()
 	_on_pickup()
 	play_pop_animation()
-	print("Powerup Active!")
-	_activate_powerup()
+
 
 
 func _play_pop_sound():

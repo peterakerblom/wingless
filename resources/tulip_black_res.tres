@@ -7,4 +7,3 @@ script = ExtResource("1_sgj00")
 plant_name = "Black Tulip"
 points = 4
 pickup_time = 3.0
-powerup = "No powerup"
