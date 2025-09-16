@@ -1,13 +1,16 @@
 extends Powerup
 class_name IncreaseSpeed
 
-@export var factor: float = 2.0  # kan ställas i editorn
+@export var speed_boost: float = 100.0
+@export var powerup_duration: float = 5.0
+
+signal timeout
 
 func apply(target: Node):
 	increase_speed()
 
-func increase_speed():
-	PlayerStats.player_speed += 25.0 
+func increase_speed() -> void:
+	PlayerStats.player_speed += speed_boost
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -31,6 +31,7 @@ func _ready():
 func register_player(p):
 	player = p
 	player.player_died.connect(_on_player_died)
+	is_player_alive = true
 
 func _on_player_died():
 	is_player_alive = false
