@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed: float = PlayerStats.player_speed
 @export var acceleration: float = PlayerStats.player_acceleration
 @export var friction: float = PlayerStats.player_friction
+@export var rotation_speed: float = PlayerStats.player_rotation  # högre = snabbare vridning
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var splat_amin: AnimatedSprite2D = $AnimatedSprite2DSplat
 @onready var splat_sound = preload("uid://d36qvsux0m8q")
@@ -21,7 +22,12 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	look_at(get_global_mouse_position())
+	#look_at(get_global_mouse_position())
+	
+	# --- Smooth rotation mot musen ---
+	var target_angle = (get_global_mouse_position() - global_position).angle()
+	rotation = lerp_angle(rotation, target_angle, rotation_speed * delta)
+
 	var move_input = Input.get_axis("move_down", "move_up")
 	if move_input:
 		animated_sprite_2d.play("walk")
