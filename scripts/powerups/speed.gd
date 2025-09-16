@@ -1,7 +1,7 @@
 extends Powerup
 class_name IncreaseSpeed
 
-@export var speed_boost: float = 100.0
+@export var speed_boost: float = 10.0
 @export var powerup_duration: float = 5.0
 
 signal timeout
