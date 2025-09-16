@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 
-@export var speed = PlayerStats.player_speed
+@export var speed: float = PlayerStats.player_speed
+@export var acceleration: float = PlayerStats.player_acceleration
+@export var friction: float = PlayerStats.player_friction
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var splat_amin: AnimatedSprite2D = $AnimatedSprite2DSplat
 @onready var splat_sound = preload("uid://d36qvsux0m8q")
@@ -25,7 +27,13 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("walk")
 	else:
 		animated_sprite_2d.play("idle")
-	velocity = transform.x * move_input * speed
+	var target_velocity = transform.x * move_input * speed
+	
+	if move_input != 0:
+		velocity = velocity.move_toward(target_velocity, acceleration * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+
 	move_and_slide()
 	if speed != PlayerStats.player_speed:
 		speed = PlayerStats.player_speed

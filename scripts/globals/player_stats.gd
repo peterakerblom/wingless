@@ -2,6 +2,8 @@ extends Node
 
 var player_speed: float = 100.0
 var player_speed_default: float = 100.0
+var player_acceleration: float = 800.0
+var player_friction: float = 600.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

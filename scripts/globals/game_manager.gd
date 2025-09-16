@@ -34,7 +34,6 @@ func register_player(p):
 
 func _on_player_died():
 	is_player_alive = false
-	print("is_player_alive = false")
 
 func reset_enemy_spawner_timers():
 	min_enemy_spawn_time = min_enemy_spawn_time_default
