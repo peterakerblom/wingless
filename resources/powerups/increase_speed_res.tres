@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="IncreaseSpeed" load_steps=2 format=3 uid="uid://dplb1rboel0aq"]
+
+[ext_resource type="Script" path="res://scripts/powerups/speed.gd" id="1_g0wgd"]
+
+[resource]
+script = ExtResource("1_g0wgd")
+factor = 10.0

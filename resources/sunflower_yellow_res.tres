@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlantData" load_steps=2 format=3 uid="uid://cvr4ahde37eqr"]
+
+[ext_resource type="Script" path="res://scripts/plant_data.gd" id="1_0w51w"]
+
+[resource]
+script = ExtResource("1_0w51w")
+plant_name = "Yellow Sunflower"
+points = 10
+pickup_time = 10.0
+powerup = "No powerup"

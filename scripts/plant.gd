@@ -1,14 +1,12 @@
 extends Area2D
 class_name Plant
 
-
-@export var timer_duration : float = 3.0
-@export var point_value : int = 1
 var timer : Timer
 @onready var level: Node2D = $"../.."
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var percentage_of_time
 @onready var pop_sound = preload("uid://c0mwuklyqwtbf")
+@export var data: PlantData
 
 var pulse_growing := true
 
@@ -16,9 +14,13 @@ signal flower_depleted
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if data:
+		print("Plant:", data.plant_name)
+		print("Points:", data.points)
+		print("Powerup:", data.powerup)
 	progress_bar.visible = false
 	timer = $Timer  # Se till att timern är som barn till Area2D
-	timer.wait_time = timer_duration
+	timer.wait_time = data.pickup_time
 	timer.one_shot = true  # Om du vill att timern ska fortsätta eller inte
 	timer.stop()  # Stoppa timern från att börja direktdy.
 
@@ -42,16 +44,18 @@ func _on_body_exited(body: Node2D) -> void:
 		timer.stop()
 
 func _on_timer_timeout() -> void:
-	level.incement_score(point_value)
-	_powerup_increase_player_speed(10.0)
+	level.incement_score(data.points)
 	var popup = preload("uid://mh2tdxx14rx7").instantiate() # point popup
 	get_parent().add_child(popup)
-	var string_point_value = "+" + str(point_value)
+	var string_point_value = "+" + str(data.points)
 	popup.show_popup(self.global_position, string_point_value)
 	_play_pop_sound()
 	progress_bar.queue_free()
 	_on_pickup()
 	play_pop_animation()
+	print("Powerup Active!")
+	_activate_powerup()
+
 
 func _play_pop_sound():
 	var player = AudioStreamPlayer.new()
@@ -87,6 +91,6 @@ func _on_pickup():
 	if camera:
 		camera.start_shake(0.5)
 
-
-func _powerup_increase_player_speed(value: float):
-	PlayerStats.player_speed += value
+func _activate_powerup():
+	if data and data.powerup:
+		data.powerup.apply(self)

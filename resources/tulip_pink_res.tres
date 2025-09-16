@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlantData" load_steps=2 format=3 uid="uid://c75uyurap7wm0"]
+
+[ext_resource type="Script" path="res://scripts/plant_data.gd" id="1_cqids"]
+
+[resource]
+script = ExtResource("1_cqids")
+plant_name = "Pink Tulip"
+points = 3
+pickup_time = 3.0
+powerup = 0
