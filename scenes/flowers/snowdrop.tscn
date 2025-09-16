@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy2ynsb0uc8tm"]
+[gd_scene load_steps=3 format=3 uid="uid://cy2ynsb0uc8tm"]
 
 [ext_resource type="PackedScene" uid="uid://ccoe0acmb0lwg" path="res://scenes/flowers/plant.tscn" id="1_1cw5e"]
 [ext_resource type="Texture2D" uid="uid://brbjliemeig8j" path="res://assets/images/snowdrop_v2.png" id="2_b2ciu"]
-[ext_resource type="Script" path="res://scripts/power_up.gd" id="3_ps83p"]
 
 [node name="Plant" instance=ExtResource("1_1cw5e")]
 timer_duration = 5.0
@@ -11,6 +10,3 @@ point_value = 5
 [node name="Sprite2D" type="Sprite2D" parent="." index="4"]
 texture_filter = 1
 texture = ExtResource("2_b2ciu")
-
-[node name="PowerUp" parent="." index="5"]
-script = ExtResource("3_ps83p")

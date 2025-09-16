@@ -85,7 +85,7 @@ func _spawn_particles():
 func _on_pickup():
 	var camera = get_tree().current_scene.get_node("Camera2D")
 	if camera:
-		camera.start_shake(0.5)  # Startar skakning med intensitet 10
+		camera.start_shake(0.5)
 
 
 func _powerup_increase_player_speed(value: float):
