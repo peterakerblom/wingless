@@ -1,6 +1,6 @@
 extends Node
 
-var score = 0
+#var score = 0
 var high_score = 0
 
 var min_enemy_spawn_time : float = 5.0
@@ -43,7 +43,7 @@ func reset_enemy_spawner_timers():
 	max_apple_spawn_time = max_apple_spawn_time_default
 
 func reset_high_score():
-	score = 0
+	#score = 0
 	high_score = 0
 
 func reset_wasp_speed():

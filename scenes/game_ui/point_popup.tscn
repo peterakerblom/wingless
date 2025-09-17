@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://mh2tdxx14rx7"]
 
-[ext_resource type="Script" path="res://scripts/point_popup.gd" id="1_rwyf7"]
+[ext_resource type="Script" path="res://scripts/point_popup.gd" id="1_emsgf"]
 
 [node name="PointPopup" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_rwyf7")
+script = ExtResource("1_emsgf")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

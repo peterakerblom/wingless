@@ -54,9 +54,10 @@ func take_damage():
 	game_over()
 
 func game_over():
+	HighscoreManager.add_score(GameManager.high_score, GameManager.current_level_number)
 	emit_signal("player_died")
 	queue_free()
-	var game_over_scene = preload("res://scenes/game_over.tscn").instantiate()
+	var game_over_scene = preload("res://scenes/ui/game_over.tscn").instantiate()
 	get_tree().current_scene.add_child(game_over_scene)
 
 func _play_splat_sound():

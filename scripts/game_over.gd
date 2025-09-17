@@ -22,4 +22,4 @@ func _on_restart_pressed():
 
 func _on_main_menu_pressed():
 	ClickSound.play_click()
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

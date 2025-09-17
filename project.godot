@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wingless"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ClickSound="*res://scripts/globals/click_sound.gd"
 GameManager="*res://scripts/globals/game_manager.gd"
 PlayerStats="*res://scripts/globals/player_stats.gd"
+HighscoreManager="*res://scripts/globals/highscore_manager.gd"
 
 [display]
 

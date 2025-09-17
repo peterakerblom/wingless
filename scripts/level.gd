@@ -66,7 +66,13 @@ func update_score_label():
 
 func update_level_label():
 	level_label.text = "Level: " + str(GameManager.current_level_number)
-
+	level_label.get_tree().create_tween().kill()
+	var level_label_tween = get_tree().create_tween()
+	
+	level_label_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	level_label_tween.tween_property(level_label, "scale", Vector2(1.5, 1.5), 1)
+	level_label_tween.tween_property(level_label, "scale", Vector2(1, 1), 1)
+	
 func incement_score(points):
 	score += points
 	update_score_label()
