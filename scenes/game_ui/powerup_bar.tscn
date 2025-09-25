@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfxyi0iecainm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrv7u"]
+bg_color = Color(0.689174, 0.451925, 0.105109, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fgyg"]
+bg_color = Color(0.865656, 0.651958, 0.210447, 1)
+
+[node name="PowerupBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 177.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_lrv7u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8fgyg")
+value = 40.0
+show_percentage = false

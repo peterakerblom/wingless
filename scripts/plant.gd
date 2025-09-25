@@ -5,8 +5,13 @@ var timer : Timer
 @onready var level: Node2D = $"../.."
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var percentage_of_time
+@onready var percentage_of_time_powerupbar
 @onready var pop_sound = preload("uid://c0mwuklyqwtbf")
+@onready var powerup_bar = preload("uid://cfxyi0iecainm")
 @export var data: PlantData
+
+var powerup_duration_bar: ProgressBar
+var powerup_timer: Timer
 
 var pulse_growing := true
 
@@ -31,6 +36,14 @@ func _process(delta: float) -> void:
 				(1 - timer.get_time_left() / timer.get_wait_time()) * 100
 			)
 		progress_bar.value = percentage_of_time
+	if not powerup_timer:
+		return
+	if not powerup_timer.is_stopped():
+		if powerup_timer.get_time_left() > 0:
+			percentage_of_time_powerupbar = (
+				(1 - powerup_timer.get_time_left() / powerup_timer.get_wait_time()) * 100
+			)
+		powerup_duration_bar.value = percentage_of_time_powerupbar
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -94,4 +107,13 @@ func _on_pickup():
 
 func _activate_powerup():
 	if data and data.powerup:
+		var powerup: Powerup = data.powerup
 		data.powerup.apply(self)
+		var powerup_duration_bar = powerup_bar.instantiate()
+		level.add_child(powerup_duration_bar)
+
+		var powerup_timer := get_tree().create_timer(powerup.powerup_duration)
+		powerup_timer.timeout.connect(func():
+			powerup.remove(self)
+			powerup_duration_bar.queue_free()
+		)

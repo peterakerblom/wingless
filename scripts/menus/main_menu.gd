@@ -10,6 +10,10 @@ func _ready() -> void:
 	highscore_btn.pressed.connect(_on_highscore_button_pressed)
 	options_btn.pressed.connect(_on_options_button_pressed)
 	exit_btn.pressed.connect(_on_exit_button_pressed)
+	_setup_button(play_btn)
+	_setup_button(options_btn)
+	_setup_button(exit_btn)
+	_setup_button(highscore_btn)
 
 func _process(delta: float) -> void:
 	pass
@@ -33,3 +37,14 @@ func _on_exit_button_pressed() -> void:
 	ClickSound.play_click()
 	await get_tree().create_timer(ClickSound.click_sound.stream.get_length()).timeout
 	get_tree().quit()	
+
+func _setup_button(btn: TextureButton) -> void:
+	btn.mouse_entered.connect(func(): btn.modulate = Color(1.1, 1.1, 1.1))
+	btn.mouse_exited.connect(func(): btn.modulate = Color(1, 1, 1))
+	btn.button_down.connect(func(): btn.modulate = Color(0.8, 0.8, 0.8))
+	btn.button_up.connect(func():
+		if btn.get_rect().has_point(btn.get_local_mouse_position()):
+			btn.modulate = Color(1.1, 1.1, 1.1) # stanna i hover
+		else:
+			btn.modulate = Color(1, 1, 1)
+	)

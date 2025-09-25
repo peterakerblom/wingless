@@ -8,6 +8,7 @@ class_name PlantData
 @export var pickup_time: float = 0
 #@export var powerup: PowerupType = PowerupType.NONE
 @export var powerup: Powerup
+@export var powerup_duration: float = 10
 @export var sprite: Texture2D
 
 

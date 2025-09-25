@@ -1,10 +1,10 @@
 extends Powerup
 class_name FreezeEnemies
 
-@export var duration: float = 3.0
+#@export var duration: float = 3.0
 
 func apply(target: Node):
-	print("Enemies frozen for", duration, "seconds!")
+	print("Enemies frozen for seconds!")
 	# Här kan du signalera eller kalla en EnemyManager
 
 # Called when the node enters the scene tree for the first time.
