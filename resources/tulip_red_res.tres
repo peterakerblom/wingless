@@ -14,3 +14,4 @@ plant_name = "Red Tulip"
 points = 13
 pickup_time = 3.0
 powerup = SubResource("Resource_o3c41")
+powerup_duration = 10.0

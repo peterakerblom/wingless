@@ -2,6 +2,7 @@ extends Resource
 class_name Powerup
 
 @export var powerup_duration: float
+@export var powerup_name: String
 
 # Varje powerup kan skriva över detta
 func apply(target: Node):

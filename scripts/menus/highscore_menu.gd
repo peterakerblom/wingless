@@ -4,20 +4,23 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	show_highscores()
+	var font = load("res://assets/fonts/PixelOperator/PixelOperator8.ttf")
+	show_highscores(font)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func show_highscores() -> void:
+func show_highscores(font) -> void:
 	#v_box_container.queue_free_children()
 	clear_children(scores_container)
 	var all_highscores: Array = HighscoreManager.highscores
 	for highscore in all_highscores:
 		var row_label = Label.new()
 		row_label.text = str("SCORE ", highscore.score, " - LEVEL: ", highscore.level)
+		if not row_label.has_theme_font_override("font"):
+			row_label.add_theme_font_override("font", font)
 		scores_container.add_child(row_label)
 
 func clear_children(container: Node) -> void:

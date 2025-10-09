@@ -109,11 +109,17 @@ func _activate_powerup():
 	if data and data.powerup:
 		var powerup: Powerup = data.powerup
 		data.powerup.apply(self)
-		var powerup_duration_bar = powerup_bar.instantiate()
-		level.add_child(powerup_duration_bar)
 
-		var powerup_timer := get_tree().create_timer(powerup.powerup_duration)
-		powerup_timer.timeout.connect(func():
-			powerup.remove(self)
-			powerup_duration_bar.queue_free()
-		)
+		# --- UI feedback ---
+		var ui_layer = get_tree().get_first_node_in_group("UI")
+		if ui_layer:
+			ui_layer.add_duration_bar(powerup)
+
+		#var powerup_duration_bar = powerup_bar.instantiate()
+		#level.add_child(powerup_duration_bar)
+#
+		#var powerup_timer := get_tree().create_timer(powerup.powerup_duration)
+		#powerup_timer.timeout.connect(func():
+			#powerup.remove(self)
+			#powerup_duration_bar.queue_free()
+		#)

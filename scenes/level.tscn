@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=14 format=4 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_jseyj"]
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dqbeaaj4x2tbo" path="res://assets/images/wingless_tileset_v2.png" id="6_cpfut"]
 [ext_resource type="Script" path="res://scripts/tile_map_layer.gd" id="6_uhpe5"]
 [ext_resource type="FontFile" uid="uid://bty0t72olslwg" path="res://assets/fonts/PixelOperator/PixelOperator.ttf" id="8_aconb"]
+[ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="8_u2t75"]
 [ext_resource type="PackedScene" uid="uid://c2f2mh2vhsbme" path="res://scenes/enemies/apple.tscn" id="9_iaj1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t73m2"]
@@ -78,7 +79,8 @@ apple_spawn_interval_max = 10.0
 position = Vector2(620, 0)
 flip_texture = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["UI"]]
+script = ExtResource("8_u2t75")
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 texture_filter = 1
@@ -112,6 +114,17 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_aconb")
 theme_override_font_sizes/font_size = 32
 text = "Player speed: "
+
+[node name="VBoxContainer4PowerUps" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="TimerLevel" type="Timer" parent="."]
 wait_time = 5.0
