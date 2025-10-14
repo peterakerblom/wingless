@@ -1,17 +1,11 @@
-[gd_resource type="Resource" script_class="PlantData" load_steps=4 format=3 uid="uid://dbuyuncrqk74u"]
+[gd_resource type="Resource" script_class="PlantData" load_steps=3 format=3 uid="uid://dbuyuncrqk74u"]
 
 [ext_resource type="Script" path="res://scripts/plant_data.gd" id="1_5c1lm"]
-[ext_resource type="Script" path="res://scripts/powerups/speed.gd" id="1_bvbvq"]
-
-[sub_resource type="Resource" id="Resource_o3c41"]
-script = ExtResource("1_bvbvq")
-speed_boost = 10.0
-powerup_duration = 5.0
+[ext_resource type="Resource" uid="uid://dplb1rboel0aq" path="res://resources/powerups/increase_speed_res.tres" id="1_gu4ky"]
 
 [resource]
 script = ExtResource("1_5c1lm")
 plant_name = "Red Tulip"
 points = 13
 pickup_time = 3.0
-powerup = SubResource("Resource_o3c41")
-powerup_duration = 10.0
+powerup = ExtResource("1_gu4ky")

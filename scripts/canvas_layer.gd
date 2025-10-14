@@ -12,4 +12,5 @@ func add_duration_bar(powerup):
 	var bar_scene = preload("uid://cfxyi0iecainm")
 	var bar = bar_scene.instantiate()
 	container.add_child(bar)
-	bar.start(powerup.powerup_name, powerup.powerup_duration)
+	bar.start(powerup)
+	return bar

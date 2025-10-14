@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_g0wgd")
-factor = 10.0
+speed_boost = 15.0
+powerup_duration = 10.0
+powerup_name = "Increased Speed"

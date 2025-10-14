@@ -80,7 +80,6 @@ func incement_score(points):
 
 func _on_timer_enemy_spawn_time_timeout() -> void:
 	if GameManager.is_player_alive:
-		print(GameManager.is_player_alive)
 		increase_level()
 		GameManager.min_enemy_spawn_time = max(1, current_level["min"])
 		GameManager.max_enemy_spawn_time = max(1, current_level["max"])

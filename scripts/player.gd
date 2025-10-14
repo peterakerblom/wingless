@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	#look_at(get_global_mouse_position())
 	
 	# --- Smooth rotation mot musen ---
 	var target_angle = (get_global_mouse_position() - global_position).angle()
@@ -68,3 +67,6 @@ func _play_splat_sound():
 	get_tree().root.add_child(player)
 	player.play()
 	player.connect("finished", Callable(player, "queue_free"))
+
+func _on_powerup_expired(powerup: Powerup):
+	powerup.remove(self)

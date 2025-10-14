@@ -15,6 +15,8 @@ var powerup_timer: Timer
 
 var pulse_growing := true
 
+var the_player: CharacterBody2D
+
 signal flower_depleted
 
 # Called when the node enters the scene tree for the first time.
@@ -47,6 +49,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		the_player = body
 		progress_bar.visible = true
 		timer.start()
 
@@ -57,7 +60,6 @@ func _on_body_exited(body: Node2D) -> void:
 		timer.stop()
 
 func _on_timer_timeout() -> void:
-	print("Powerup Active!")
 	_activate_powerup()
 	level.incement_score(data.points)
 	var popup = preload("uid://mh2tdxx14rx7").instantiate() # point popup
@@ -108,18 +110,11 @@ func _on_pickup():
 func _activate_powerup():
 	if data and data.powerup:
 		var powerup: Powerup = data.powerup
-		data.powerup.apply(self)
+		powerup.apply(self)
 
-		# --- UI feedback ---
 		var ui_layer = get_tree().get_first_node_in_group("UI")
 		if ui_layer:
-			ui_layer.add_duration_bar(powerup)
-
-		#var powerup_duration_bar = powerup_bar.instantiate()
-		#level.add_child(powerup_duration_bar)
-#
-		#var powerup_timer := get_tree().create_timer(powerup.powerup_duration)
-		#powerup_timer.timeout.connect(func():
-			#powerup.remove(self)
-			#powerup_duration_bar.queue_free()
-		#)
+			var bar = ui_layer.add_duration_bar(powerup)
+			await get_tree().process_frame  # 👈 Vänta tills baren är i scenen
+			if bar and bar.is_connected("expired", Callable(self, "_on_powerup_expired")) == false:
+				bar.connect("expired", Callable(the_player, "_on_powerup_expired"))

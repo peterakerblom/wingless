@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dsmppjbhh5vbl"]
+[gd_scene load_steps=20 format=4 uid="uid://dsmppjbhh5vbl"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_jseyj"]
 [ext_resource type="PackedScene" uid="uid://hiqnp35mi2a0" path="res://scenes/player.tscn" id="1_mvkqu"]
@@ -7,9 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://c63jav3eq4r3y" path="res://scenes/spawn.tscn" id="5_51k3b"]
 [ext_resource type="Texture2D" uid="uid://dqbeaaj4x2tbo" path="res://assets/images/wingless_tileset_v2.png" id="6_cpfut"]
 [ext_resource type="Script" path="res://scripts/tile_map_layer.gd" id="6_uhpe5"]
+[ext_resource type="PackedScene" uid="uid://br0n6edb2wsce" path="res://scenes/flowers/tulip_red.tscn" id="7_q4el2"]
+[ext_resource type="PackedScene" uid="uid://d0tpgsdj10gpn" path="res://scenes/flowers/tulip_yellow.tscn" id="8_3vjp4"]
 [ext_resource type="FontFile" uid="uid://bty0t72olslwg" path="res://assets/fonts/PixelOperator/PixelOperator.ttf" id="8_aconb"]
 [ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="8_u2t75"]
 [ext_resource type="PackedScene" uid="uid://c2f2mh2vhsbme" path="res://scenes/enemies/apple.tscn" id="9_iaj1h"]
+[ext_resource type="PackedScene" uid="uid://ynetij171pjh" path="res://scenes/flowers/tulip_pink.tscn" id="9_sn0wo"]
+[ext_resource type="PackedScene" uid="uid://1htwuc48ian7" path="res://scenes/flowers/tulip_black.tscn" id="10_84ff5"]
+[ext_resource type="PackedScene" uid="uid://oflg1kh26y6k" path="res://scenes/flowers/sunflower_yellow.tscn" id="15_k41np"]
+[ext_resource type="PackedScene" uid="uid://cy2ynsb0uc8tm" path="res://scenes/flowers/snowdrop.tscn" id="16_qr8o6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t73m2"]
 texture = ExtResource("2_r65vv")
@@ -47,7 +53,7 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_t73m2")
 sources/1 = SubResource("TileSetAtlasSource_51ooa")
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" groups=["Levels"]]
 script = ExtResource("1_jseyj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -68,6 +74,28 @@ apple_spawn_interval_min = 8.0
 apple_spawn_interval_max = 10.0
 
 [node name="Flowers" type="Node" parent="."]
+
+[node name="Plant" parent="Flowers" instance=ExtResource("7_q4el2")]
+position = Vector2(264, 213)
+
+[node name="Plant2" parent="Flowers" instance=ExtResource("7_q4el2")]
+position = Vector2(265, 192)
+
+[node name="Plant3" parent="Flowers" instance=ExtResource("8_3vjp4")]
+position = Vector2(319, 255)
+
+[node name="Plant4" parent="Flowers" instance=ExtResource("9_sn0wo")]
+position = Vector2(385, 237)
+
+[node name="Plant5" parent="Flowers" instance=ExtResource("10_84ff5")]
+position = Vector2(401, 181)
+
+[node name="Plant6" parent="Flowers" instance=ExtResource("15_k41np")]
+position = Vector2(292, 170)
+
+[node name="Plant7" parent="Flowers" instance=ExtResource("16_qr8o6")]
+position = Vector2(267, 255)
+scale = Vector2(1, 1.00778)
 
 [node name="Enemies" type="Node" parent="."]
 
