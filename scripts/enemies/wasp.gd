@@ -26,3 +26,16 @@ func apply_flipped():
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		body.take_damage()
+
+func freeze():
+	if is_processing():
+		set_process(false)
+	if has_node("AnimationPlayer"):
+		$AnimationPlayer.pause()
+	print("Frozen:", self.name)
+
+func unfreeze():
+	set_process(true)
+	if has_node("AnimationPlayer"):
+		$AnimationPlayer.play()
+	print("Unfrozen:", self.name)

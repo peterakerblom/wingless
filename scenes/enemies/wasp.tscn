@@ -43,7 +43,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Wasp" type="Area2D"]
+[node name="Wasp" type="Area2D" groups=["Enemies"]]
 collision_layer = 2
 script = ExtResource("1_eoh3n")
 

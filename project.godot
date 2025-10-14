@@ -31,6 +31,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 Player="Player group"
+Enemies=""
+Spawns=""
 
 [input]
 

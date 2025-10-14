@@ -7,6 +7,9 @@ func apply(target: Node):
 	_freeze_enemies(target)
 	# Här kan du signalera eller kalla en EnemyManager
 
+func remove(target: Node):
+	_unfreeze_enemies(target)
+	
 func _freeze_enemies(target):
 	print("Enemies frozen for seconds!")
 	var tree = target.get_tree()
@@ -18,9 +21,28 @@ func _freeze_enemies(target):
 	for enemy in enemies:
 		if enemy.has_method("freeze"):
 			enemy.freeze()
-	#var level = get_tree().get_first_node_in_group("Levels")
-		
-	pass
+
+	var spawns = tree.get_nodes_in_group("Spawns")
+	for spawn in spawns:
+		var timer: Timer = spawn.get_node("Timer")
+		timer.set_paused(true)
+
+
+func _unfreeze_enemies(target: Node):
+	print("Unfreezing all enemies!")
+	var tree = target.get_tree()
+	if not tree:
+		return
+
+	var enemies = tree.get_nodes_in_group("Enemies")
+	for enemy in enemies:
+		if enemy.has_method("unfreeze"):
+			enemy.unfreeze()
+
+	var spawns = tree.get_nodes_in_group("Spawns")
+	for spawn in spawns:
+		var timer: Timer = spawn.get_node("Timer")
+		timer.set_paused(false)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -101,9 +101,9 @@ scale = Vector2(1, 1.00778)
 
 [node name="Spawns" type="Node" parent="."]
 
-[node name="SpawnLeft" parent="Spawns" instance=ExtResource("5_51k3b")]
+[node name="SpawnLeft" parent="Spawns" groups=["Spawns"] instance=ExtResource("5_51k3b")]
 
-[node name="SpawnRight" parent="Spawns" instance=ExtResource("5_51k3b")]
+[node name="SpawnRight" parent="Spawns" groups=["Spawns"] instance=ExtResource("5_51k3b")]
 position = Vector2(620, 0)
 flip_texture = true
 

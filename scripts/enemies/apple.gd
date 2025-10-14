@@ -47,3 +47,17 @@ func _play_landing_sound():
 	get_tree().root.add_child(player)
 	player.play()
 	player.connect("finished", Callable(player, "queue_free"))
+
+
+func freeze():
+	if is_processing():
+		set_process(false)
+	if has_node("AnimationPlayer"):
+		$AnimationPlayer.pause()
+	print("Frozen:", self.name)
+
+func unfreeze():
+	set_process(true)
+	if has_node("AnimationPlayer"):
+		$AnimationPlayer.play()
+	print("Unfrozen:", self.name)
