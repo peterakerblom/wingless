@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dft0q"]
 size = Vector2(20, 360)
 
-[node name="Spawn" type="StaticBody2D"]
+[node name="Spawn" type="StaticBody2D" groups=["Spawns"]]
 script = ExtResource("1_gsica")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

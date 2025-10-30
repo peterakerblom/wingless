@@ -3,6 +3,7 @@ class_name Powerup
 
 @export var powerup_duration: float
 @export var powerup_name: String
+@export var icon: Texture2D
 
 # Varje powerup kan skriva över detta
 func apply(target: Node):

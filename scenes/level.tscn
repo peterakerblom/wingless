@@ -97,13 +97,19 @@ position = Vector2(292, 170)
 position = Vector2(267, 255)
 scale = Vector2(1, 1.00778)
 
+[node name="Plant8" parent="Flowers" instance=ExtResource("16_qr8o6")]
+position = Vector2(316, 211)
+
+[node name="Plant9" parent="Flowers" instance=ExtResource("16_qr8o6")]
+position = Vector2(335, 156)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Spawns" type="Node" parent="."]
 
-[node name="SpawnLeft" parent="Spawns" groups=["Spawns"] instance=ExtResource("5_51k3b")]
+[node name="SpawnLeft" parent="Spawns" instance=ExtResource("5_51k3b")]
 
-[node name="SpawnRight" parent="Spawns" groups=["Spawns"] instance=ExtResource("5_51k3b")]
+[node name="SpawnRight" parent="Spawns" instance=ExtResource("5_51k3b")]
 position = Vector2(620, 0)
 flip_texture = true
 

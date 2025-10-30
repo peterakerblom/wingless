@@ -26,11 +26,19 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_8fgyg")
 value = 40.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="ProgressBar"]
 layout_mode = 0
-offset_left = -86.0
-offset_right = 91.0
+offset_right = 327.0
 offset_bottom = 27.0
+alignment = 1
+
+[node name="Label" type="Label" parent="ProgressBar/HBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("2_eck46")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ProgressBar/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+stretch_mode = 2

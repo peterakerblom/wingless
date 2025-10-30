@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ExtraPoints" load_steps=2 format=3 uid="uid://bw4tvrtpt0ec3"]
+[gd_resource type="Resource" script_class="ExtraPoints" load_steps=3 format=3 uid="uid://bw4tvrtpt0ec3"]
 
 [ext_resource type="Script" path="res://scripts/powerups/extra_points.gd" id="1_j0x53"]
+[ext_resource type="Texture2D" uid="uid://plxjpfprcmk6" path="res://assets/images/icons/icon_coins_16.png" id="1_w5xf7"]
 
 [resource]
 script = ExtResource("1_j0x53")
@@ -8,3 +9,4 @@ bonus_points = 2
 points_multiplier = 2
 powerup_duration = 15.0
 powerup_name = "Extra Points"
+icon = ExtResource("1_w5xf7")

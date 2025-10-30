@@ -1,11 +1,8 @@
 extends Powerup
 class_name FreezeEnemies
 
-#@export var duration: float = 3.0
-
 func apply(target: Node):
 	_freeze_enemies(target)
-	# Här kan du signalera eller kalla en EnemyManager
 
 func remove(target: Node):
 	_unfreeze_enemies(target)
@@ -29,7 +26,6 @@ func _freeze_enemies(target):
 
 
 func _unfreeze_enemies(target: Node):
-	print("Unfreezing all enemies!")
 	var tree = target.get_tree()
 	if not tree:
 		return

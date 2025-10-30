@@ -71,8 +71,6 @@ func _on_timer_timeout() -> void:
 	_on_pickup()
 	play_pop_animation()
 
-
-
 func _play_pop_sound():
 	var player = AudioStreamPlayer.new()
 	player.stream = pop_sound
@@ -100,7 +98,6 @@ func _spawn_particles():
 	particles.global_position = self.global_position
 	particles.z_index = 999
 	get_tree().current_scene.add_child(particles)
-
 
 func _on_pickup():
 	var camera = get_tree().current_scene.get_node("Camera2D")

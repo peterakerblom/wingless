@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="FreezeEnemies" load_steps=2 format=3 uid="uid://mngbtoekh6jr"]
+[gd_resource type="Resource" script_class="FreezeEnemies" load_steps=3 format=3 uid="uid://bldqld7208fo6"]
 
+[ext_resource type="Texture2D" uid="uid://dfbg3wvwl872w" path="res://assets/images/icons/icon_freeze_16.png" id="1_hltcg"]
 [ext_resource type="Script" path="res://scripts/powerups/freeze_enemies.gd" id="1_xhjk0"]
 
 [resource]
 script = ExtResource("1_xhjk0")
 powerup_duration = 5.0
 powerup_name = "Freeze Enemies"
+icon = ExtResource("1_hltcg")

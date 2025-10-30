@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 
 func add_score(score: int, level: int) -> void:
 	highscores.append({"score": score, "level": level})
-	highscores.sort_custom(func(a,b): return b["score"] - a["score"])
+	#highscores.sort_custom(func(a,b): return b["score"] - a["score"])
+	highscores.sort_custom(func(a, b): return a["score"] > b["score"])
 	if highscores.size() > 10:
 		highscores = highscores.slice(0, 10)
 	print("💾 Sparar highscores")
@@ -38,9 +39,12 @@ func load_scores() -> void:
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if not file:
 		print("LOADING ERROR: Could not read file")
+		return
 	var text = file.get_as_text()
 	var json = JSON.parse_string(text)
 	if typeof(json) != TYPE_ARRAY:
 		print("LOADING ERROR: Data is not a TYPED_ARRAY")
-	highscores = json
+		highscores = []
+	else:
+		highscores = json
 	file.close()
